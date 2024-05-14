@@ -8,10 +8,6 @@
                         <div>
                             <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
                                 About Me</h2>
-                            <ULink class="md:block hidden" to="#portofolio">
-                                <UButton>Skip This <Icon name="mdi:chevron-right"></Icon>
-                                </UButton>
-                            </ULink>
                         </div>
                         <div
                             class="md:flex-row flex-col flex h-full max-w-full md:py-14 md:justify-between justify-center text-left gap-8">
@@ -33,11 +29,6 @@
                                 <p>{{ contents[selectedContent].description }}
                                 </p>
                             </div>
-                            <ULink class="md:hidden block" to="#portofolio">
-                                <UButton>Skip This <Icon name="mdi:chevron-right"></Icon>
-                                </UButton>
-                            </ULink>
-
                         </div>
                     </div>
                 </UContainer>
