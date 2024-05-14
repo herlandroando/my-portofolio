@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+  nitro: { preset: "static" },
+  // devtools: { enabled: true },
   ssr: false,
   modules: [
     "@nuxt/ui",
@@ -13,6 +14,11 @@ export default defineNuxtConfig({
   googleFonts: {
     families: {
       Montserrat: true,
+    },
+  },
+  hooks: {
+    close: () => {
+      process.exit(0);
     },
   },
 });
