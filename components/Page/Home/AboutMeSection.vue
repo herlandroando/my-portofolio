@@ -4,11 +4,14 @@
         <Transition>
             <div v-if="aboutMeVisible" class="w-full left-0 h-full md:py-12 fixed top-[3.5rem] z-10">
                 <UContainer class="w-full h-full">
-                    <div class="px-12 md:my-0 my-[50%] mx-0">
+                    <div class="px-12 md:my-0 my-[15%] mx-0">
                         <div>
                             <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
                                 About Me</h2>
-                                <ULink class="md:block hidden" to="#portofolio"><UButton>Skip This <Icon name="mdi:chevron-right"></Icon></UButton></ULink>
+                            <ULink class="md:block hidden" to="#portofolio">
+                                <UButton>Skip This <Icon name="mdi:chevron-right"></Icon>
+                                </UButton>
+                            </ULink>
                         </div>
                         <div
                             class="md:flex-row flex-col flex h-full max-w-full md:py-14 md:justify-between justify-center text-left gap-8">
@@ -30,7 +33,10 @@
                                 <p>{{ contents[selectedContent].description }}
                                 </p>
                             </div>
-                            <ULink class="md:hidden block" to="#portofolio"><UButton>Skip This <Icon name="mdi:chevron-right"></Icon></UButton></ULink>
+                            <ULink class="md:hidden block" to="#portofolio">
+                                <UButton>Skip This <Icon name="mdi:chevron-right"></Icon>
+                                </UButton>
+                            </ULink>
 
                         </div>
                     </div>
@@ -41,6 +47,8 @@
 </template>
 
 <script setup lang="ts">
+import { aboutMeContents } from '~/data';
+
 const props = defineProps<{
     heightSectionBefore: number
 }>()
@@ -51,25 +59,7 @@ const selectedContent = ref(0);
 
 const { x, y } = useWindowScroll()
 
-const contents = [{
-    key: 1,
-    img: "/assets/images/1.jpg",
-    description: "My name is Herlandro Tribiakto and yup that is me. You're probably wondering how i ended up in this situation...",
-},
-{
-    key: 2,
-    img: "/assets/images/2.png",
-    description: `It all started with the game Warcraft 3. I was intrigued by the game's world editor. Inside there is a game logic design with the GUI of the application so that the map of the game has something unique.
-    By using this, I made a map in the game and my friends liked the map I made. From here I was inspired to become a programmer focusing on game development.`,
-    customStyle: { objectPosition: "25% 25%" }
-}, {
-    key: 3,
-    img: "/assets/images/3.jpg",
-    description: `Days passed but none of my friends or people in my neighborhood were interested in
-    game development. On top of that, I had been slapped with the harshness of life. I became a web developer and started to get interested in web development.
-    I learned by myself on YouTube, documentation of several technology websites and other written sources.`,
-    customStyle: { objectPosition: "15% 0%" }
-}]
+const contents = aboutMeContents;
 
 onMounted(() => {
     clientHeight.value = aboutMeRef.value?.clientHeight ?? 0;
@@ -95,10 +85,7 @@ function handleCompareSelectedContent() {
     for (let i = 0; i < contents.length; i++) {
         let compareStartHeight = props.heightSectionBefore + (compare * i)
         let compareEndHeight = props.heightSectionBefore + (compare * (i + 1));
-        // console.log(y.value < compareStartHeight, y.value < compareEndHeight, compareStartHeight, compareEndHeight, y.value)
-        //300 < 200 && 300 > 400
         if (y.value > compareStartHeight && y.value < compareEndHeight) {
-            console.log("YES", i)
             return i;
         }
     }
