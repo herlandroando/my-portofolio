@@ -66,9 +66,10 @@ export const experiences: ExperienceItem[] = [
     from: "June 2022",
     to: "Agustus 2022",
     content:
-      "This was my first job at the company. It's a startup company serving domestic assistant services.  Here I do several tasks, such as:\n\n" +
-      "- Create Bulk Import/Export feature for data from excel or CSV\n" +
-      "- Create a Calendar that is synchronized with the registered partner's work schedule.\n" +
-      "- Work with my coworkers and achieve common goals.",
+      "It's a startup company about developing children's character with games, quizzes, and cartoons. My challenge is to build this app from scratch, so I need to think the system through. In addition, there is another challenge, which is to create an attractive appearance for children. Some of my tasks were:\n\n" +
+      "- Create a database design and implement the design\n" +
+      "- Creating an interactive and responsive interface for the learning section.\n" +
+      "- Designing an admin editor such as games, dynamic quizzes and video selection.\n" +
+      "- Developing multiple languages (Indonesian and English) for each content.",
   },
 ];
