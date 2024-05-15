@@ -1,12 +1,11 @@
 <template>
-    <section
-        class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20"
-        id="portofolio">
+    <section class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20" id="portofolio">
         <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
             Experience</h2>
-        <div class="px-12">
-            <ol class="timeline border-gray-300 border-l-2 md:gap-8 gap-24">
-                <ExperienceTimelineItem v-for="experience in experiences" :key="experience.key"
+        <div class="md:px-12 px-7">
+            <ol class="timeline md:gap-8 gap-24">
+                <ExperienceTimelineItem v-for="experience in experiences"
+                    :is-last-item="experiences.length === experience.key" :key="experience.key"
                     :experience="experience"></ExperienceTimelineItem>
             </ol>
         </div>
@@ -28,5 +27,32 @@ import { experiences } from '~/data';
     padding: 32px 0 32px 32px;
     font-size: 1.125rem;
     position: relative;
+}
+
+.fade-down-enter-active,
+.fade-down-leave-active,
+.fade-up-enter-active,
+.fade-up-leave-active {
+    transition: all 1s ease;
+}
+
+.fade-down-enter-from {
+    transform: translate(0em, 0em) !important;
+    opacity: 1;
+}
+
+.fade-down-leave-to {
+    transform: translate(0em, 5em) !important;
+    opacity: 0;
+}
+
+.fade-up-enter-from {
+    transform: translate(0em, 5em) !important;
+    opacity: 0;
+}
+
+.slide-up-leave-to {
+    transform: translate(0em, 0em) !important;
+    opacity: 1;
 }
 </style>

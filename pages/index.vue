@@ -5,7 +5,7 @@
       <div class="relative flex flex-col justify-center h-full">
         <div class="text-left">
           <UBadge class="font-medium md:text-2xl text-xl mb-2">{{ `
-            <WebDeveloper />`}}
+            <FullStackDeveloper />`}}
           </UBadge>
           <h2
             class="font-black md:text-6xl text-5xl mb-6 border-cloudburst-600 border-b-8 border-none md:border-solid w-fit">
