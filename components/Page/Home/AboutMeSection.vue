@@ -6,14 +6,14 @@
                 <UContainer class="w-full h-full">
                     <div class="px-12 md:my-0 my-[15%] mx-0">
                         <div>
-                            <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
+                            <h2 class="font-black md:text-4xl text-3xl md:mt-4 mb-6 w-fit">
                                 About Me</h2>
                         </div>
                         <div
                             class="md:flex-row flex-col flex h-full max-w-full md:py-14 md:justify-between justify-center text-left gap-8">
                             <div class="md:basis-1/3 basis-[none] relative w-full md:h-[370px] h-[195px]">
                                 <template v-for="(content, k) in contents.slice(selectedContent, selectedContent + 3)">
-                                    <Transition name="slide">
+                                    <Transition :name="animSlide">
                                         <div v-if="content.key >= selectedContent + 1" :key="content.key"
                                             class="dark:bg-slate-600 bg-slate-100 shadow-md absolute w-full h-full justify-center flex"
                                             :style="{ zIndex: contents.length - k, transform: defineTransform(k) }">
@@ -47,6 +47,8 @@ const aboutMeRef = ref<HTMLElement>();
 const aboutMeVisible = ref(false);
 const clientHeight = ref(0);
 const selectedContent = ref(0);
+const isSlideDown = ref(true);
+const animSlide = computed(() => isSlideDown.value ? 'slide-down' : 'slide-up')
 
 const { x, y } = useWindowScroll()
 
@@ -56,7 +58,10 @@ onMounted(() => {
     clientHeight.value = aboutMeRef.value?.clientHeight ?? 0;
 })
 
-watch([x, y], ([x, y]) => {
+watch([x, y], ([x, y], [xO, yO]) => {
+    isSlideDown.value = y > yO
+    console.log(isSlideDown.value);
+
     if (!props.heightSectionBefore) {
         return;
     }
@@ -93,18 +98,31 @@ function defineTransform(k: number) {
 </script>
 
 <style>
-.slide-enter-active,
-.slide-leave-active {
+.slide-down-enter-active,
+.slide-down-leave-active,
+.slide-up-enter-active,
+.slide-up-leave-active {
     transition: all 1s ease;
 }
 
-.slide-enter-from {
+.slide-down-enter-from {
     transform: translate(.5em, .5em) !important;
+    opacity: 1;
 }
 
-.slide-leave-to {
+.slide-down-leave-to {
     transform: translate(-40em, 0em) !important;
     opacity: 0;
+}
+
+.slide-up-enter-from {
+    transform: translate(-40em, 0em) !important;
+    opacity: 0;
+}
+
+.slide-up-leave-to {
+    transform: translate(.5em, .5em) !important;
+    opacity: 1;
 }
 
 .fade-enter-active,

@@ -25,6 +25,7 @@
       <PageHomeAboutMeSection :height-section-before="heightIntroduction">
 
       </PageHomeAboutMeSection>
+      <PageHomeExperienceSection />
       <section
         class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20 h-[calc(100vh-6.25rem)]"
         id="portofolio">
