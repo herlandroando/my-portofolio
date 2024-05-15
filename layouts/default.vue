@@ -34,10 +34,4 @@ const colorMode = useColorMode()
 const isDark = computed(() =>
     colorMode.value === 'dark'
 )
-
-console.log(isDark.value)
-
-// function handleChangeColorMode() {
-//     colorMode.preference = isDark.value ? 'light' : 'dark'
-// }
 </script>
