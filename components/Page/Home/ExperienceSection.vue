@@ -1,12 +1,12 @@
 <template>
     <section class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20" id="portofolio">
-        <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
-            Experience</h2>
+        <!-- <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
+            Experience</h2> -->
+        <TextTitle tag="h2" class="mb-6 w-fit">Experience</TextTitle>
         <div class="md:px-12 px-7">
             <ol class="timeline md:gap-8 gap-24">
-                <ExperienceTimelineItem v-for="experience in experiences"
-                    :is-last-item="experiences.length === experience.key" :key="experience.key"
-                    :experience="experience"></ExperienceTimelineItem>
+                <TimelineItem v-for="experience in experiences" :is-last-item="experiences.length === experience.key"
+                    :key="experience.key" :item="experience"></TimelineItem>
             </ol>
         </div>
     </section>
