@@ -3,13 +3,13 @@ import type { FunctionScrollDetect } from "../types/plugins";
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive<HTMLElement, FunctionScrollDetect>("scroll-detect", {
     mounted(el, binding) {
-      console.log("create event scroll");
+      // console.log("create event scroll");
       document.addEventListener("scroll", (e) =>
         handleScroll(e, binding.value, el)
       );
     },
     unmounted(el, binding) {
-      console.log("dismount event scroll");
+      // console.log("dismount event scroll");
       document.removeEventListener("scroll", (e) =>
         handleScroll(e, binding.value, el)
       );
