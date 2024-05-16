@@ -26,17 +26,14 @@
 
       </PageHomeAboutMeSection>
       <PageHomeExperienceSection />
-      <section
-        class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20 h-[calc(100vh-6.25rem)]"
-        id="portofolio">
-        <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
-          Portofolio</h2>
-      </section>
+      <PageHomeEducationSection />
+      <PageHomePortofolioSection/>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
+
 const myMedia = [
   {
     label: 'Linkedin',
