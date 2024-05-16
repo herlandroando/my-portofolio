@@ -6,7 +6,7 @@
             Portofolio</h2> -->
         <TextTitle tag="h2" class="mb-6 w-fit">Portofolio</TextTitle>
         <div class="grid md:grid-cols-2 mt-14 gap-4 grid-cols-1">
-            <PortofolioItem v-for="item in portofolio" :item="item"></PortofolioItem>
+            <PortofolioItem v-for="(item) in portofolio" :item="item" :key="item.key"></PortofolioItem>
         </div>
     </section>
 </template>
