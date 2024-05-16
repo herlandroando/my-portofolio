@@ -6,8 +6,9 @@
                 <UContainer class="w-full h-full">
                     <div class="px-12 md:my-0 my-[15%] mx-0">
                         <div>
-                            <h2 class="font-black md:text-4xl text-3xl md:mt-4 mb-6 w-fit">
-                                About Me</h2>
+                            <TextTitle tag="h2" class="md:mt-4 mb-6 w-fit">About Me</TextTitle>
+                            <!-- <h2 class="font-black md:text-4xl text-3xl md:mt-4 mb-6 w-fit">
+                                About Me</h2> -->
                         </div>
                         <div
                             class="md:flex-row flex-col flex h-full max-w-full md:py-14 md:justify-between justify-center text-left gap-8">
@@ -60,7 +61,7 @@ onMounted(() => {
 
 watch([x, y], ([x, y], [xO, yO]) => {
     isSlideDown.value = y > yO
-    console.log(isSlideDown.value);
+    // console.log(isSlideDown.value);
 
     if (!props.heightSectionBefore) {
         return;
