@@ -1,5 +1,5 @@
 <template>
-    <section class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20" id="portofolio">
+    <section id="experience" class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20">
         <!-- <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
             Experience</h2> -->
         <TextTitle tag="h2" class="mb-6 w-fit">Experience</TextTitle>

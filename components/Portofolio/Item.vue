@@ -24,7 +24,7 @@
                 <p>{{ item.description }}</p>
             </div>
             <UButton variant="link" color="black" class="p-0 mt-auto">
-                Click for more details <Icon name="mdi:chevron-right"></Icon>
+                Click for more details <Icon name="mdi:traffic-cone"></Icon>
             </UButton>
         </div>
     </UCard>
@@ -42,7 +42,7 @@ const computedClassTransition = computed(() => {
     if (visible.value) {
         return "translate-x-0 opacity-100"
     } else {
-        return key % 2 ? "translate-x-[-4rem] opacity-0" : "translate-x-[4rem] opacity-0"
+        return key % 2 ? "translate-x-[-1rem] opacity-0" : "translate-x-[1rem] opacity-0"
     }
 })
 

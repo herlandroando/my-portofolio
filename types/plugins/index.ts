@@ -1,4 +1,8 @@
 export type FunctionScrollDetect = {
-  isOnElement: () => void;
-  isNotOnElement: () => void;
+  options?: {
+    startOffset?: number;
+    endOffset?: number;
+  };
+  isOnElement: (el: HTMLElement) => void;
+  isNotOnElement: (el: HTMLElement) => void;
 };

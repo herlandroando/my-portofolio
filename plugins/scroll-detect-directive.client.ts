@@ -28,12 +28,15 @@ function handleScroll(
   const target = e.target as Document;
 
   let { top, bottom } = el.getBoundingClientRect();
+  let startOffset = binding.options?.startOffset ?? -400;
+  let endOffset = binding.options?.endOffset ?? 400;
+
   if (
-    target.body.scrollTop > top - 400 &&
-    target.body.scrollTop < bottom + 400
+    target.body.scrollTop > top + startOffset &&
+    target.body.scrollTop < bottom + endOffset
   ) {
-    binding.isOnElement();
+    binding.isOnElement(el);
   } else {
-    binding.isNotOnElement();
+    binding.isNotOnElement(el);
   }
 }
