@@ -4,7 +4,7 @@
         <TextTitle tag="h2" class="mb-6 text-center">Let's Have a Chat! </TextTitle>
         <p class="md:w-[80%] w-full">I'm interested in collaborating on creative and innovative projects or if you have
             any questions about me or
-            technology. You can talk to me on the social media below:</p>
+            technology, You can chat to me on the social media below:</p>
         <!-- <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
             Education</h2> -->
         <div class="md:px-12 px-7 flex flex-row gap-4">

@@ -12,10 +12,10 @@
                                 <Icon name="mdi:close" size="24"></Icon>
                             </UButton>
                         </div>
-                        <NavbarLink to="#about-me">About Me</NavbarLink>
-                        <NavbarLink to="#experience">Experience</NavbarLink>
-                        <NavbarLink to="#education">Education</NavbarLink>
-                        <NavbarLink to="#portofolio">Portofolio</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="#about-me">About Me</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="#experience">Experience</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="#education">Education</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="#portofolio">Portofolio</NavbarLink>
                         <NavbarLink @click="handleAlertConstruction">
                             <Icon name="mdi:traffic-cone"></Icon> Blog
                         </NavbarLink>
@@ -91,6 +91,7 @@ function handleOpenSidebar() {
 }
 
 function handleAlertConstruction() {
+    openSidebar.value = false;
     openAlertConstruction.value = true;
 }
 </script>

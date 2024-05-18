@@ -16,6 +16,7 @@ const skill = {
   webDevelopment: { label: "Web Development", icon: "mdi:web" },
   godot: { label: "Godot", icon: "simple-icons:godotengine" },
   gdScript: { label: "GD Script", icon: "simple-icons:godotengine" },
+  mysql: {label: "MySQL", icon: "devicon-plain:mysql"}
 };
 
 export default function (name: string): { label: string; icon: string } {

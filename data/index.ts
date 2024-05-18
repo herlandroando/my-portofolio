@@ -130,7 +130,7 @@ export const portofolio: PortofolioItem[] = [
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/Jvw67Fs/archive-mail-main.jpg",
     date: "May 2020 - August 2020",
-    skills: ["webDevelopment", "php", "codeigniter3", "js", "jQuery"],
+    skills: ["webDevelopment", "php", "codeigniter3", "js", "jQuery", "mysql"],
     description:
       "Mail archive management website in Condongcatur village. This website uses the Codeigniter 3 framework.",
     detailAction: "/portofolio/archive-mail",
@@ -142,7 +142,7 @@ export const portofolio: PortofolioItem[] = [
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/fQwCZRt/sipus-main.jpg",
     date: "September 2020 - November 2020",
-    skills: ["webDevelopment", "php", "laravel", "API"],
+    skills: ["webDevelopment", "php", "laravel", "API", "mysql"],
     description:
       "A Website Application to manage information on childbearing age couples in Bantul district, Yogyakarta with the client side using React JS framework and the server side using Laravel framework.",
     detailAction: "/portofolio/sipus",
@@ -154,7 +154,7 @@ export const portofolio: PortofolioItem[] = [
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/dm393LY/laron-main.png",
     date: "February 2021 - May 2021",
-    skills: ["webDevelopment", "php", "laravel", "API", "REST API"],
+    skills: ["webDevelopment", "php", "laravel", "API", "REST API", "mysql"],
     description:
       "A marketplace application for BUMDESA in the Yogyakarta area created by the Institute for Research and Empowerment (IRE). This application has 2 sections, namely the ordinary user section and the admin section. Each has a different platform. For the admin part we use a website with the help of the React JS framework. For the regular user section we use the Android platform with the language used is Kotlin. For the server part we use Laravel with API communication method.",
     detailAction: "/portofolio/laron",
@@ -166,7 +166,14 @@ export const portofolio: PortofolioItem[] = [
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/py2g5H8/tanpamerek-main.png",
     date: "January 2022 - March 2022",
-    skills: ["webDevelopment", "php", "laravel", "js", "Payment Gateway"],
+    skills: [
+      "webDevelopment",
+      "php",
+      "laravel",
+      "js",
+      "Payment Gateway",
+      "mysql",
+    ],
     description:
       "We created a product/website to serve retail download services of assets on several well-known and well-known websites that impose a premium system or subscription per month/per year.",
     detailAction: "/portofolio/tanpamerek",
@@ -185,6 +192,7 @@ export const portofolio: PortofolioItem[] = [
       "API",
       "REST API",
       "Payment Gateway",
+      "mysql",
     ],
     description:
       "A marketplace application for BUMDESA in Jenu city, Tuban with the same engine as Laron. The biggest change here is the implementation of Payment Gateway and some new looks on the website and mobile platform.",
@@ -197,7 +205,16 @@ export const portofolio: PortofolioItem[] = [
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/SyLCty2/lp-ire-main.png",
     date: "September 2022 - February 2023",
-    skills: ["webDevelopment", "php", "laravel", "API", "js", "react", "Livewire"],
+    skills: [
+      "webDevelopment",
+      "php",
+      "laravel",
+      "API",
+      "js",
+      "react",
+      "Livewire",
+      "mysql"
+    ],
     description:
       "IRE is non-profit organization in Yogyakarta. We developed a they website with a CMS system for efficient content management. The site has separate admin and user sections with attractive designs using React JS and Laravel + Livewire.",
     detailAction: "/portofolio/lp-ire",

@@ -18,9 +18,17 @@
               <FullStackDeveloper />`}}
             </UBadge>
             <h2
-              class="font-black md:text-6xl text-5xl mb-6 border-cloudburst-600 border-b-8 border-none md:border-solid w-fit">
+              class="font-black md:text-6xl text-5xl mb-3 border-cloudburst-600 border-b-8 border-none md:border-solid w-fit">
               Herlandro<br class="md:hidden block" /> <span
                 class="md:border-none border-cloudburst-600 border-b-8 border-solid">Tribiakto</span></h2>
+            <div class="flex flex-row gap-2 flex-wrap mb-6">
+              <template v-for="skill in skills">
+                <SkillTag class="!text-white" v-if="_.isArray(skill)" :color="skill[1]" :key="skill[0]" :name="skill[0]">
+                </SkillTag>
+                <SkillTag v-else color="gray" :key="skill" :name="skill">
+                </SkillTag>
+              </template>
+            </div>
             <p class="font-medium md:text-2xl text-xl">I'm focusing on the Backend but it's possible that I'll work on
               the
               Frontend.</p>
@@ -47,6 +55,8 @@
 
 <script setup lang="ts">
 import type { FunctionScrollDetect } from '~/types/plugins';
+import { experiences, portofolio } from '~/data/index'
+import _ from 'lodash';
 
 
 const myMedia = [
@@ -67,6 +77,7 @@ const myMedia = [
   },
 ]
 
+const skills = ref<any>([])
 const pointSections = ['introduction', 'about-me', 'experience', 'education', 'portofolio', 'contact']
 
 const introductionRef = ref<HTMLElement>()
@@ -88,6 +99,7 @@ const handleScrollDetect: FunctionScrollDetect = {
 
 onMounted(() => {
   hasFinishMounted.value = true;
+  skills.value = [['webDevelopment', 'orange'], ['php', 'orange'], ['laravel', 'orange'], ['js', 'orange'], ['Livewire', 'orange'], ['vue', 'orange'], ['jQuery', 'orange'], ['mysql', 'orange'], ['API', 'orange'], ['REST API', 'orange'], 'Payment Gateway', 'codeigniter3', 'react', 'gameDevelopment', 'Game Design', 'cpp', 'SIGIL', 'godot', 'gdScript']
 })
 
 function pointClass(id: string) {
