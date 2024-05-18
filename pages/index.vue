@@ -18,18 +18,18 @@
               <FullStackDeveloper />`}}
             </UBadge>
             <h2
-              class="font-black md:text-6xl text-5xl mb-3 border-cloudburst-600 border-b-8 border-none md:border-solid w-fit">
+              class="font-black md:text-6xl text-5xl border-cloudburst-600 border-b-8 border-none md:border-solid w-fit">
               Herlandro<br class="md:hidden block" /> <span
                 class="md:border-none border-cloudburst-600 border-b-8 border-solid">Tribiakto</span></h2>
-            <div class="flex flex-row gap-2 flex-wrap mb-6">
+            <div class="flex flex-row gap-1 flex-wrap mb-3 mt-6">
               <template v-for="skill in skills">
-                <SkillTag class="!text-white" v-if="_.isArray(skill)" :color="skill[1]" :key="skill[0]" :name="skill[0]">
+                <SkillTag class="!text-white !md:text-sm !text-xs" v-if="_.isArray(skill)" :color="skill[1]" :key="skill[0]" :name="skill[0]">
                 </SkillTag>
-                <SkillTag v-else color="gray" :key="skill" :name="skill">
+                <SkillTag class="!md:text-sm !text-xs" v-else color="gray" :key="skill" :name="skill">
                 </SkillTag>
               </template>
             </div>
-            <p class="font-medium md:text-2xl text-xl">I'm focusing on the Backend but it's possible that I'll work on
+            <p class="font-medium md:text-2xl text-lg">I'm focusing on the Backend but it's possible that I'll work on
               the
               Frontend.</p>
             <div class="flex flex-row gap-2 justify-start mt-5">
