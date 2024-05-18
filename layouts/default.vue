@@ -74,6 +74,13 @@
         </p>
     </footer>
     <AlertOnConstruction v-model="openAlertConstruction" />
+    <div class="fixed bottom-4 right-4 z-30" @click="handleClickTop">
+        <Transition>
+            <UButton v-if="notOnTop" class="p-2">
+                <Icon size="24" name="mdi:chevron-up"></Icon>
+            </UButton>
+        </Transition>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -81,6 +88,19 @@ const colorMode = useColorMode()
 
 const openAlertConstruction = ref(false);
 const openSidebar = ref(false);
+const notOnTop = ref(false);
+const { x, y } = useWindowScroll()
+
+watch([x, y], ([x, y], [xO, yO]) => {
+    if (y > 100 && !notOnTop.value) {
+        notOnTop.value = true
+        return;
+    }
+    if (y <= 100 && notOnTop.value) {
+        notOnTop.value = false
+        return;
+    }
+})
 
 const isDark = computed(() =>
     colorMode.value === 'dark'
@@ -93,5 +113,9 @@ function handleOpenSidebar() {
 function handleAlertConstruction() {
     openSidebar.value = false;
     openAlertConstruction.value = true;
+}
+
+function handleClickTop() {
+    window.scrollTo(0, 0)
 }
 </script>
