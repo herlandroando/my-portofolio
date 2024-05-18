@@ -1,9 +1,14 @@
 <template>
-    <h1 class="font-extrabold md:text-3xl text-2xl text-primary">HT<span class="animate-underscore">_</span></h1>
+    <NuxtLink to="/" @click="handleClickLogo">
+        <h1 class="font-extrabold md:text-3xl text-2xl text-primary">HT<span class="animate-underscore">_</span></h1>
+    </NuxtLink>
 </template>
 
 <script setup lang="ts">
 
+function handleClickLogo(){
+    window.scrollTo(0, 0);
+}
 </script>
 
 <style>
@@ -22,10 +27,12 @@
         opacity: 1;
         transform: scale(2);
     }
+
     30% {
         opacity: 0.5;
         transform: scale(2);
     }
+
     100% {
         transform: scale(1);
         opacity: 0;
