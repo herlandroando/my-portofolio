@@ -2,7 +2,11 @@
 
 It seems incomplete if the programmer does not have a web portfolio. So I present my web portfolio. Thank you for coming to my web.
 
-Look at [Nuxt docs](https://nuxt.com/docs/getting-started/introduction) and [Nuxt UI docs](https://ui.nuxt.com) to learn more.
+Create using:
+- [Nuxt 3](https://nuxt.com/)
+- [NuxtUI](https://ui.nuxt.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [Vue 3](https://vuejs.org/)
 
 ## Setup
 
