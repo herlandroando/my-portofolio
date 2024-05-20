@@ -213,10 +213,31 @@ export const portofolio: PortofolioItem[] = [
       "js",
       "react",
       "Livewire",
-      "mysql"
+      "mysql",
     ],
     description:
       "IRE is non-profit organization in Yogyakarta. We developed a they website with a CMS system for efficient content management. The site has separate admin and user sections with attractive designs using React JS and Laravel + Livewire.",
     detailAction: "/portofolio/lp-ire",
+  },
+  {
+    key: 9,
+    title: "Landing Page PT. Panorama Varia Cipta with CMS",
+    role: "Freelance - Fullstack Developer",
+    at: "Lide Dev Community",
+    imageUrl: "https://i.ibb.co.com/8xFsfP8/original-pvc-main.jpg",
+    date: "November 2023 - December 2023",
+    skills: [
+      "webDevelopment",
+      "php",
+      "laravel",
+      "API",
+      "js",
+      "react",
+      "Livewire",
+      "mysql",
+    ],
+    description:
+      "A Company Profile of the company PT Panorama Varia Cipta which deals with PVC ceilings. This website implements the same engine as CMS Website IRE Yogyakarta with some minor adjustments.",
+    detailAction: "/portofolio/original-pvc",
   },
 ];
