@@ -14,6 +14,8 @@
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui": "^2.13.0",
     "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/mdc": "^0.7.1",
+    "@tailwindcss/typography": "^0.5.13",
     "nuxt": "^3.10.1"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
     "@types/lodash": "^4.17.1",
     "@vueuse/core": "^10.9.0",
     "@vueuse/nuxt": "^10.9.0",
+    "axios": "^1.7.2",
     "locomotive-scroll": "^4.1.4",
     "lodash": "^4.17.21",
     "nuxt-icon": "^0.6.10",

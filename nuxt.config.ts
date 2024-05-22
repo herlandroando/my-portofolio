@@ -3,13 +3,8 @@ export default defineNuxtConfig({
   nitro: { preset: "static" },
   // devtools: { enabled: true },
   ssr: false,
-  modules: [
-    "@nuxt/ui",
-    // "@nuxt/image",
-    "@nuxtjs/google-fonts",
-    "nuxt-icon",
-    "@vueuse/nuxt",
-  ],
+  modules: ["@nuxt/ui", // "@nuxt/image",
+  "@nuxtjs/google-fonts", "nuxt-icon", "@vueuse/nuxt", "@nuxtjs/mdc"],
   css: ["assets/css/main.css"],
   googleFonts: {
     families: {
