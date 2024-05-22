@@ -1,0 +1,29 @@
+{
+    "applicationName": "Pearl Hunter",
+    "url": {
+        "file": "https://drive.google.com/file/d/1XGS6JxhzqzMRL3eTr9Kvbc-iVxMrZw6Q/view?usp=drive_link"
+    },
+    "note": "I really apologize for the source code, I'm looking for it but haven't found it until now. I will try to find and upload it to Github.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Programmer & Game Design (Gameplay, Level & Character)"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Asset Finder & Graphic Design"
+        },
+        {
+            "name": "Muttafiah",
+            "role": "Documentation & Graphic Design"
+        },
+        {
+            "name": "Destri Herliana Irianti",
+            "role": "Asset Finder & Graphic Design"
+        },
+        {
+            "name": "Muhammad Gufron Hawaly",
+            "role": "Game Design (Gameplay & Character)"
+        }
+    ]
+}

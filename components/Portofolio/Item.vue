@@ -24,7 +24,7 @@
                 <p>{{ item.description }}</p>
             </div>
             <UButton variant="link" color="black" class="p-0 mt-auto">
-                Click for more details <Icon name="mdi:traffic-cone"></Icon>
+                Click for more details <Icon v-if="!item.detailAction" name="mdi:traffic-cone"></Icon>
             </UButton>
         </div>
     </UCard>

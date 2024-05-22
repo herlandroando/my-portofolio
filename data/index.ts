@@ -101,6 +101,7 @@ export const portofolio: PortofolioItem[] = [
   {
     key: 1,
     title: "Pearl Hunter",
+    name: "pearl-hunter",
     role: "Programmer & Game Design",
     at: "AMICTA 2018 - Universitas Amikom Yogyakarta",
     imageUrl: "https://i.ibb.co.com/Lt93wJb/pearl-hunter-main.jpg",
@@ -113,6 +114,7 @@ export const portofolio: PortofolioItem[] = [
   {
     key: 2,
     title: "Story of Nature Spirit",
+    name: "story-of-nature-spirit",
     role: "Programmer & Game Design",
     at: "AMICTA 2020 - Universitas Amikom Yogyakarta",
     imageUrl: "https://i.ibb.co.com/DWjTBF5/sons-main.jpg",
@@ -120,12 +122,13 @@ export const portofolio: PortofolioItem[] = [
     skills: ["gameDevelopment", "Game Design", "godot", "gdScript"],
     description:
       "This RPG genre game was created with a game engine called Godot using the engine's built-in scripting language called GDScript. This game tells the story of a fairy named Raka who was created from natural elements. This fairy wants to save the world and the fairy race from the attack of a dark creature called Radish. Raka will save the world and the fairy race by balancing darkness and light in this world.",
-    detailAction: "/portofolio/story-of-nature-spirit",
+    // detailAction: "/portofolio/story-of-nature-spirit",
   },
   {
     key: 3,
     title:
       "Letter Archive Information System in Condongcatur Village Government",
+    name: "archive-mail",
     role: "Freelance - Fullstack Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/Jvw67Fs/archive-mail-main.jpg",
@@ -133,11 +136,12 @@ export const portofolio: PortofolioItem[] = [
     skills: ["webDevelopment", "php", "codeigniter3", "js", "jQuery", "mysql"],
     description:
       "Mail archive management website in Condongcatur village. This website uses the Codeigniter 3 framework.",
-    detailAction: "/portofolio/archive-mail",
+    // detailAction: "/portofolio/archive-mail",
   },
   {
     key: 4,
     title: "Information System for Fertile Age Couples in Bantul",
+    name: "sipus",
     role: "Freelance - Backend Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/fQwCZRt/sipus-main.jpg",
@@ -145,11 +149,12 @@ export const portofolio: PortofolioItem[] = [
     skills: ["webDevelopment", "php", "laravel", "API", "mysql"],
     description:
       "A Website Application to manage information on childbearing age couples in Bantul district, Yogyakarta with the client side using React JS framework and the server side using Laravel framework.",
-    detailAction: "/portofolio/sipus",
+    // detailAction: "/portofolio/sipus",
   },
   {
     key: 5,
     title: "Marketplace Laron Application",
+    name: "laron",
     role: "Freelance - Backend Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/dm393LY/laron-main.png",
@@ -157,11 +162,12 @@ export const portofolio: PortofolioItem[] = [
     skills: ["webDevelopment", "php", "laravel", "API", "REST API", "mysql"],
     description:
       "A marketplace application for BUMDESA in the Yogyakarta area created by the Institute for Research and Empowerment (IRE). This application has 2 sections, namely the ordinary user section and the admin section. Each has a different platform. For the admin part we use a website with the help of the React JS framework. For the regular user section we use the Android platform with the language used is Kotlin. For the server part we use Laravel with API communication method.",
-    detailAction: "/portofolio/laron",
+    // detailAction: "/portofolio/laron",
   },
   {
     key: 6,
     title: "Tanpamerek",
+    name: "tanpamerek",
     role: "Freelance - Backend Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/py2g5H8/tanpamerek-main.png",
@@ -176,11 +182,12 @@ export const portofolio: PortofolioItem[] = [
     ],
     description:
       "We created a product/website to serve retail download services of assets on several well-known and well-known websites that impose a premium system or subscription per month/per year.",
-    detailAction: "/portofolio/tanpamerek",
+    // detailAction: "/portofolio/tanpamerek",
   },
   {
     key: 7,
     title: "Marketplace Jiwa Jenu Application",
+    name: "jiwa-jenu",
     role: "Freelance - Backend Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/t8sqXDq/jiwa-jenu-main.jpg",
@@ -196,11 +203,12 @@ export const portofolio: PortofolioItem[] = [
     ],
     description:
       "A marketplace application for BUMDESA in Jenu city, Tuban with the same engine as Laron. The biggest change here is the implementation of Payment Gateway and some new looks on the website and mobile platform.",
-    detailAction: "/portofolio/jiwa-jenu",
+    // detailAction: "/portofolio/jiwa-jenu",
   },
   {
     key: 8,
     title: "Landing Page IRE with CMS",
+    name: "lp-ire",
     role: "Freelance - Fullstack Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/SyLCty2/lp-ire-main.png",
@@ -217,11 +225,12 @@ export const portofolio: PortofolioItem[] = [
     ],
     description:
       "IRE is non-profit organization in Yogyakarta. We developed a they website with a CMS system for efficient content management. The site has separate admin and user sections with attractive designs using React JS and Laravel + Livewire.",
-    detailAction: "/portofolio/lp-ire",
+    // detailAction: "/portofolio/lp-ire",
   },
   {
     key: 9,
     title: "Landing Page PT. Panorama Varia Cipta with CMS",
+    name: "lp-ori-pvc",
     role: "Freelance - Fullstack Developer",
     at: "Lide Dev Community",
     imageUrl: "https://i.ibb.co.com/8xFsfP8/original-pvc-main.jpg",
@@ -238,6 +247,6 @@ export const portofolio: PortofolioItem[] = [
     ],
     description:
       "A Company Profile of the company PT Panorama Varia Cipta which deals with PVC ceilings. This website implements the same engine as CMS Website IRE Yogyakarta with some minor adjustments.",
-    detailAction: "/portofolio/original-pvc",
+    // detailAction: "/portofolio/lp-ori-pvc",
   },
 ];

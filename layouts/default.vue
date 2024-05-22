@@ -12,27 +12,27 @@
                                 <Icon name="mdi:close" size="24"></Icon>
                             </UButton>
                         </div>
-                        <NavbarLink @click="() => openSidebar = false" to="#about-me">About Me</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="#experience">Experience</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="#education">Education</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="#portofolio">Portofolio</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="/#about-me">About Me</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="/#experience">Experience</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="/#education">Education</NavbarLink>
+                        <NavbarLink @click="() => openSidebar = false" to="/#portofolio">Portofolio</NavbarLink>
                         <NavbarLink @click="handleAlertConstruction">
                             <Icon name="mdi:traffic-cone"></Icon> Blog
                         </NavbarLink>
-                        <NavbarLink to="#contact">Contact</NavbarLink>
+                        <NavbarLink to="/#contact">Contact</NavbarLink>
                     </div>
                 </USlideover>
                 <Logo></Logo>
             </div>
             <div class="flex-row justify-center gap-3 lg:flex hidden items-center">
-                <NavbarLink to="#about-me">About Me</NavbarLink>
-                <NavbarLink to="#experience">Experience</NavbarLink>
-                <NavbarLink to="#education">Education</NavbarLink>
-                <NavbarLink to="#portofolio">Portofolio</NavbarLink>
+                <NavbarLink to="/#about-me">About Me</NavbarLink>
+                <NavbarLink to="/#experience">Experience</NavbarLink>
+                <NavbarLink to="/#education">Education</NavbarLink>
+                <NavbarLink to="/#portofolio">Portofolio</NavbarLink>
                 <NavbarLink @click="handleAlertConstruction">
                     <Icon name="mdi:traffic-cone"></Icon> Blog
                 </NavbarLink>
-                <NavbarLink to="#contact">Contact</NavbarLink>
+                <NavbarLink to="/#contact">Contact</NavbarLink>
 
             </div>
             <div class="flex flex-row gap-3">

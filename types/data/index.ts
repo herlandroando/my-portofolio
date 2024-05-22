@@ -41,6 +41,7 @@ type TimelineItemButtonOption = {
  */
 export type PortofolioItem = {
   key: number;
+  name: string;
   title: string;
   date: string;
   at: string;
@@ -53,4 +54,18 @@ export type PortofolioItem = {
    * If detailAction is url string, you can make a new tab and the url is external with external=true
    */
   external?: boolean;
+};
+
+export type PortofolioSinglePageMeta = {
+  applicationName: string;
+  url?: {
+    file?: string;
+    github?: string;
+    customUrl?: string;
+  };
+  note?: string;
+  createdBy: {
+    name: string;
+    role: string;
+  }[];
 };

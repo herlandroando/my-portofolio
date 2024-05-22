@@ -5,7 +5,7 @@
             Portofolio</h2> -->
         <TextTitle tag="h2" class="mb-6 w-fit">Portofolio</TextTitle>
         <div class="grid md:grid-cols-2 mt-14 gap-4 grid-cols-1">
-            <PortofolioItem @click="handleAlertClick" v-for="(item) in portofolio" :item="item" :key="item.key">
+            <PortofolioItem @click="handleAlertClick(item)" v-for="(item) in portofolio" :item="item" :key="item.key">
             </PortofolioItem>
         </div>
         <AlertOnConstruction v-model="openAlertConstruction" />
@@ -14,10 +14,16 @@
 
 <script setup lang="ts">
 import { portofolio } from '~/data';
+import type { PortofolioItem } from '~/types/data';
 
+const router = useRouter();
 const openAlertConstruction = ref(false)
 
-function handleAlertClick() {
+function handleAlertClick(item: PortofolioItem) {
+    if (typeof item.detailAction === 'string') {
+        router.push(item.detailAction)
+        return;
+    }
     openAlertConstruction.value = !openAlertConstruction.value;
 }
 </script>
