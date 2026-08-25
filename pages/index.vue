@@ -25,7 +25,7 @@
               <template v-for="skill in skills">
                 <SkillTag class="!text-white !md:text-sm !text-xs" v-if="_.isArray(skill)" :color="skill[1]" :key="skill[0]" :name="skill[0]">
                 </SkillTag>
-                <SkillTag class="!md:text-sm !text-xs" v-else color="gray" :key="skill" :name="skill">
+                <SkillTag class="!md:text-sm !text-xs" v-else color="neutral" :key="skill" :name="skill">
                 </SkillTag>
               </template>
             </div>
@@ -33,11 +33,9 @@
               the
               Frontend.</p>
             <div class="flex flex-row gap-2 justify-start mt-5">
-              <ULink v-for="media in myMedia" :key="media.label" :to="media.link" target="_blank" :external="true">
-                <UButton class="p-2" variant="soft">
-                  <Icon :name="media.icon" size="24" />
-                </UButton>
-              </ULink>
+              <UButton v-for="media in myMedia" :key="media.label" :to="media.link" target="_blank" external class="p-2" variant="soft">
+                <Icon :name="media.icon" size="24" />
+              </UButton>
             </div>
           </div>
         </div>
@@ -45,7 +43,7 @@
       </section>
     </Transition>
     <PageHomeAboutMeSection v-scroll-detect="handleScrollDetect" :height-section-before="heightIntroduction">
-    </PageHomeAboutMeSection v-scroll-detect="handleScrollDetect">
+    </PageHomeAboutMeSection>
     <PageHomeExperienceSection v-scroll-detect="handleScrollDetect" />
     <PageHomeEducationSection v-scroll-detect="handleScrollDetect" />
     <PageHomePortofolioSection v-scroll-detect="handleScrollDetect" />
@@ -126,12 +124,3 @@ function pointClass(id: string) {
   opacity: 0;
 }
 </style>
-<!-- <UCard class="mt-10">
-        <template #header>
-          <div class="flex justify-between">
-            <h1>Welcome to Nuxt UI Starter</h1>
-            <ColorScheme><USelect v-model="$colorMode.preference" :options="['system', 'light', 'dark']" /></ColorScheme>
-          </div>
-        </template>
-        <UButton icon="i-heroicons-book-open" to="https://ui.nuxt.com" target="_blank">Open Nuxt UI Documentation</UButton>
-      </UCard> -->

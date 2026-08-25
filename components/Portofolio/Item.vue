@@ -1,11 +1,7 @@
 <template>
     <UCard v-scroll-detect="handleScrollDetect" class="h-full cursor-pointer transition-all duration-1000"
         :class="computedClassTransition" :ui="{
-            body: {
-                base: 'h-full',
-                background: '',
-                padding: 'px-4 py-5 sm:p-6',
-            },
+            body: 'h-full px-4 py-5 sm:p-6',
         }">
         <div class="flex flex-col gap-3 relative h-full">
             <div class="text-xs">
@@ -23,7 +19,7 @@
             <div class="text-sm">
                 <p>{{ item.description }}</p>
             </div>
-            <UButton variant="link" color="black" class="p-0 mt-auto">
+            <UButton variant="link" color="neutral" class="p-0 mt-auto">
                 Click for more details <Icon v-if="!item.detailAction" name="mdi:traffic-cone"></Icon>
             </UButton>
         </div>

@@ -5,22 +5,24 @@
                 <UButton class="lg:hidden block" @click="handleOpenSidebar">
                     <Icon name="mdi:menu"></Icon>
                 </UButton>
-                <USlideover side="left" v-model="openSidebar">
-                    <div class="p-4 flex flex-col h-full justify-center gap-6 relative">
-                        <div class="absolute top-0 mt-8">
-                            <UButton class="p-2" @click="() => openSidebar = false">
-                                <Icon name="mdi:close" size="24"></Icon>
-                            </UButton>
+                <USlideover side="left" v-model:open="openSidebar">
+                    <template #content>
+                        <div class="p-4 flex flex-col h-full justify-center gap-6 relative">
+                            <div class="absolute top-0 mt-8">
+                                <UButton class="p-2" @click="() => openSidebar = false">
+                                    <Icon name="mdi:close" size="24"></Icon>
+                                </UButton>
+                            </div>
+                            <NavbarLink @click="() => openSidebar = false" to="/#about-me">About Me</NavbarLink>
+                            <NavbarLink @click="() => openSidebar = false" to="/#experience">Experience</NavbarLink>
+                            <NavbarLink @click="() => openSidebar = false" to="/#education">Education</NavbarLink>
+                            <NavbarLink @click="() => openSidebar = false" to="/#portofolio">Portofolio</NavbarLink>
+                            <NavbarLink @click="handleAlertConstruction">
+                                <Icon name="mdi:traffic-cone"></Icon> Blog
+                            </NavbarLink>
+                            <NavbarLink to="/#contact">Contact</NavbarLink>
                         </div>
-                        <NavbarLink @click="() => openSidebar = false" to="/#about-me">About Me</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="/#experience">Experience</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="/#education">Education</NavbarLink>
-                        <NavbarLink @click="() => openSidebar = false" to="/#portofolio">Portofolio</NavbarLink>
-                        <NavbarLink @click="handleAlertConstruction">
-                            <Icon name="mdi:traffic-cone"></Icon> Blog
-                        </NavbarLink>
-                        <NavbarLink to="/#contact">Contact</NavbarLink>
-                    </div>
+                    </template>
                 </USlideover>
                 <Logo></Logo>
             </div>
@@ -55,22 +57,14 @@
             Create with 💖 by Herlandro
         </p>
         <p class="text-sm text-gray-400 text-center">
-            Using <ULink to="https://nuxt.com/" target="_blank" external>
-                <UButton class="p-0" variant="link">Nuxt 3</UButton>
-            </ULink>
+            Using <UButton to="https://nuxt.com/" target="_blank" class="p-0" variant="link">Nuxt</UButton>
             &
-            <ULink to="https://ui.nuxt.com/" target="_blank" external>
-                <UButton class="p-0" variant="link">NuxtUI</UButton>
-            </ULink>
+            <UButton to="https://ui.nuxt.com/" target="_blank" class="p-0" variant="link">Nuxt UI</UButton>
             <br>
-            Built with <ULink to="https://vercel.com/" target="_blank" external>
-                <UButton class="p-0" variant="link">Vercel</UButton>
-            </ULink>
+            Built with <UButton to="https://vercel.com/" target="_blank" class="p-0" variant="link">Vercel</UButton>
         </p>
         <p class="text-sm mt-5 text-gray-400 text-center">
-            Source code on <ULink to="https://github.com/herlandroando/my-portofolio" target="_blank" external>
-                <UButton class="p-0" variant="link">Github</UButton>.
-            </ULink>
+            Source code on <UButton to="https://github.com/herlandroando/my-portofolio" target="_blank" class="p-0" variant="link">Github</UButton>.
         </p>
     </footer>
     <AlertOnConstruction v-model="openAlertConstruction" />

@@ -1,6 +1,36 @@
 @import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme {
+  --color-cloudburst-50: #f2f5fc;
+  --color-cloudburst-100: #e1e8f8;
+  --color-cloudburst-200: #cad7f3;
+  --color-cloudburst-300: #a5beeb;
+  --color-cloudburst-400: #7a9ce0;
+  --color-cloudburst-500: #5b7bd6;
+  --color-cloudburst-600: #4760c9;
+  --color-cloudburst-700: #3d4eb8;
+  --color-cloudburst-800: #374296;
+  --color-cloudburst-900: #303a78;
+  --color-cloudburst-950: #262b54;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 body {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    scroll-behavior: smooth;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
 }

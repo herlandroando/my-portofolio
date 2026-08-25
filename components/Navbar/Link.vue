@@ -1,7 +1,11 @@
 <template>
-    <UButton variant="link">
-        <NuxtLink class="font-bold text-base">
-            <slot>Unknown</slot>
-        </NuxtLink>
+    <UButton :to="to" variant="link" class="font-bold text-base">
+        <slot>Unknown</slot>
     </UButton>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+    to?: string
+}>()
+</script>

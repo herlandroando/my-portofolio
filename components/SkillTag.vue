@@ -1,5 +1,5 @@
 <template>
-    <UBadge :color="color">
+    <UBadge :color="computedColor">
         <div class="flex flex-row gap-1 items-center">
             {{ item.label }}
             <template v-if="item.icon !== ''">
@@ -10,7 +10,18 @@
 </template>
 
 <script setup lang="ts">
-const { name, color = 'cloudburst' } = defineProps<{ name: string, color?: string }>()
+const props = withDefaults(defineProps<{
+    name: string
+    color?: string
+}>(), {
+    color: 'primary'
+})
 
-const item = computed(() => createSkillMeta(name))
+const computedColor = computed(() => {
+    if (props.color === 'gray') return 'neutral'
+    if (props.color === 'cloudburst') return 'primary'
+    return props.color as any
+})
+
+const item = computed(() => createSkillMeta(props.name))
 </script>

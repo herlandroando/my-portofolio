@@ -1,7 +1,8 @@
 export default defineAppConfig({
   ui: {
-    primary: 'cloudburst',
-    
-    gray: 'slate',
-  }
+    colors: {
+      primary: 'cloudburst',
+      neutral: 'slate',
+    },
+  },
 })
