@@ -5,7 +5,7 @@
             Education</h2> -->
         <div class="md:px-12 px-7">
             <ol class="timeline md:gap-8 gap-24">
-                <TimelineItem v-for="edu in educations" :is-last-item="educations.length === edu.key" :key="edu.key"
+                <TimelineItem v-for="(edu, index) in educations" :is-last-item="index === educations.length - 1" :key="edu.key"
                     :item="edu"></TimelineItem>
             </ol>
         </div>

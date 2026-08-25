@@ -1,0 +1,98 @@
+%PDF-1.4
+1 0 obj
+<<
+  /Type /Catalog
+  /Pages 2 0 R
+>>
+endobj
+2 0 obj
+<<
+  /Type /Pages
+  /Kids [3 0 R]
+  /Count 1
+>>
+endobj
+3 0 obj
+<<
+  /Type /Page
+  /Parent 2 0 R
+  /MediaBox [0 0 612 792]
+  /Resources <<
+    /Font <<
+      /F1 4 0 R
+      /F2 5 0 R
+    >>
+  >>
+  /Contents 6 0 R
+>>
+endobj
+4 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica-Bold
+>>
+endobj
+5 0 obj
+<<
+  /Type /Font
+  /Subtype /Type1
+  /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<<
+  /Length 718
+>>
+stream
+BT
+/F1 22 Tf
+50 720 Td
+(Herlandro Tribiakto) Tj
+0 -26 Td
+/F2 14 Tf
+(Fullstack & Backend Developer) Tj
+0 -30 Td
+/F1 14 Tf
+(Contact & Profiles) Tj
+0 -18 Td
+/F2 11 Tf
+(Email: herlandrotri@gmail.com | Website: https://herlandrotri.dev) Tj
+0 -15 Td
+(LinkedIn: linkedin.com/in/herlandro-tribiakto | GitHub: github.com/herlandroando) Tj
+0 -30 Td
+/F1 14 Tf
+(Core Skills) Tj
+0 -18 Td
+/F2 11 Tf
+(Backend: PHP, Laravel, Node.js, Go, MySQL, PostgreSQL, REST APIs, System Architecture) Tj
+0 -15 Td
+(Frontend: Vue 3, Nuxt 4, TypeScript, Tailwind CSS, JavaScript) Tj
+0 -30 Td
+/F1 14 Tf
+(Professional Summary) Tj
+0 -18 Td
+/F2 11 Tf
+(Fullstack Developer with deep backend expertise in scalable web architectures,) Tj
+0 -15 Td
+(payment gateways, and enterprise web solutions.) Tj
+ET
+endstream
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000266 00000 n 
+0000000337 00000 n 
+0000000403 00000 n 
+trailer
+<<
+  /Size 7
+  /Root 1 0 R
+>>
+startxref
+1174
+%%EOF

@@ -1,28 +1,18 @@
-import axios, { type AxiosResponse } from "axios";
 import type { PortofolioSinglePageMeta } from "~/types/data";
 
 /**
- * Fetching local data. The content data will extension .md
+ * Fetching local data. The content data will have extension .md
  */
 export default async (slug: string) => {
-  const responseMeta = await axios.get<PortofolioSinglePageMeta>(
+  const meta = await $fetch<PortofolioSinglePageMeta>(
     `/assets/portofolio/${slug}.json`
   );
 
-  checkIfRequestError(responseMeta);
-
-  const responseContent = await axios.get<string>(
-    `/assets/portofolio/${slug}.md`
+  const content = await $fetch<string>(
+    `/assets/portofolio/${slug}.md`,
+    { responseType: "text" }
   );
 
-  checkIfRequestError(responseContent);
-
-  return { meta: responseMeta.data, content: responseContent.data };
+  return { meta, content };
 };
 
-function checkIfRequestError(resp: AxiosResponse) {
-  const header = resp.headers["content-type"] as string;
-  if (header.includes("text/html")) {
-    throw Error("Content not found");
-  }
-}

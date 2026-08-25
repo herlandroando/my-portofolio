@@ -20,7 +20,7 @@
                             <NavbarLink @click="handleAlertConstruction">
                                 <Icon name="mdi:traffic-cone"></Icon> Blog
                             </NavbarLink>
-                            <NavbarLink to="/#contact">Contact</NavbarLink>
+                            <NavbarLink @click="() => openSidebar = false" to="/#contact">Contact</NavbarLink>
                         </div>
                     </template>
                 </USlideover>
@@ -37,18 +37,12 @@
                 <NavbarLink to="/#contact">Contact</NavbarLink>
 
             </div>
-            <div class="flex flex-row gap-3">
-                <UButton class="p-3"
-                    @click="() => $colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'"
-                    variant="outline">
-                    <Icon v-if="!isDark" name="material-symbols:clear-day-rounded"></Icon>
-                    <Icon v-else name="material-symbols:nightlight"></Icon>
-                </UButton>
-            </div>
-        </UContainer>
-
-    </header>
-    <UContainer id="main" as="main" class="relative">
+            <div class="flex flex-row gap-3 items-center">
+                <ClientOnly v-if="!colorMode?.forced">
+                    <UButton
+                        variant="outline"
+                        :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
+                        @click="isDark = !isDark">
         <div class="mt-[80px]"></div>
         <slot></slot>
     </UContainer>
@@ -96,17 +90,14 @@ watch([x, y], ([x, y], [xO, yO]) => {
     }
 })
 
-const isDark = computed(() =>
-    colorMode.value === 'dark'
-)
-
-function handleOpenSidebar() {
-    openSidebar.value = true;
-}
-
-function handleAlertConstruction() {
-    openSidebar.value = false;
-    openAlertConstruction.value = true;
+const isDark = computed({
+    get() {
+        return colorMode.value === 'dark'
+    },
+    set() {
+        colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
+    }
+})
 }
 
 function handleClickTop() {

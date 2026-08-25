@@ -1,42 +1,44 @@
 import type { FunctionScrollDetect } from "../types/plugins";
 
+const observers = new WeakMap<HTMLElement, IntersectionObserver>();
+
 export default defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive<HTMLElement, FunctionScrollDetect>("scroll-detect", {
     mounted(el, binding) {
-      // console.log("create event scroll");
-      document.addEventListener("scroll", (e) =>
-        handleScroll(e, binding.value, el)
+      if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
+        binding.value?.isOnElement?.(el);
+        return;
+      }
+
+      const startOffset = binding.value?.options?.startOffset ?? 0;
+      const endOffset = binding.value?.options?.endOffset ?? 0;
+      const rootMargin = `${startOffset}px 0px ${endOffset}px 0px`;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            if (entry.isIntersecting) {
+              binding.value?.isOnElement?.(el);
+            } else {
+              binding.value?.isNotOnElement?.(el);
+            }
+          }
+        },
+        {
+          rootMargin,
+          threshold: 0.1,
+        }
       );
+
+      observer.observe(el);
+      observers.set(el, observer);
     },
-    unmounted(el, binding) {
-      // console.log("dismount event scroll");
-      document.removeEventListener("scroll", (e) =>
-        handleScroll(e, binding.value, el)
-      );
+    unmounted(el) {
+      const observer = observers.get(el);
+      if (observer) {
+        observer.disconnect();
+        observers.delete(el);
+      }
     },
   });
 });
-
-function handleScroll(
-  e: Event,
-  binding: FunctionScrollDetect,
-  el: HTMLElement
-) {
-  if (!e.target) {
-    return;
-  }
-  const target = e.target as Document;
-
-  let { top, bottom } = el.getBoundingClientRect();
-  let startOffset = binding.options?.startOffset ?? -400;
-  let endOffset = binding.options?.endOffset ?? 400;
-
-  if (
-    target.body.scrollTop > top + startOffset &&
-    target.body.scrollTop < bottom + endOffset
-  ) {
-    binding.isOnElement(el);
-  } else {
-    binding.isNotOnElement(el);
-  }
-}

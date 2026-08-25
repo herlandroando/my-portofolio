@@ -33,11 +33,23 @@
             <p class="font-medium md:text-2xl text-lg">I'm focusing on the Backend but it's possible that I'll work on
               the
               Frontend.</p>
-            <div class="flex flex-row gap-2 justify-start mt-5">
-              <UButton v-for="media in myMedia" :key="media.label" :to="media.link" target="_blank" external class="p-2"
-                variant="soft">
-                <Icon :name="media.icon" size="24" />
+            <div class="flex flex-row flex-wrap items-center gap-3 justify-start mt-5">
+              <UButton
+                to="/resume.pdf"
+                target="_blank"
+                icon="mdi:file-document-outline"
+                color="primary"
+                variant="solid"
+                class="font-medium"
+              >
+                Download CV / Resume
               </UButton>
+              <div class="flex flex-row gap-2">
+                <UButton v-for="media in myMedia" :key="media.label" :to="media.link" target="_blank" external class="p-2"
+                  variant="soft">
+                  <Icon :name="media.icon" size="24" />
+                </UButton>
+              </div>
             </div>
           </div>
         </div>

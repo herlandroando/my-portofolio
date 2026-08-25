@@ -11,7 +11,7 @@
 
             </div>
             <div class="h-[340px]">
-                <img class="rounded h-full w-full object-cover" :src="item.imageUrl" />
+                <NuxtImg class="rounded h-full w-full object-cover" :src="item.imageUrl" :alt="item.title" format="webp" loading="lazy" placeholder />
             </div>
             <div class="flex flex-row flex-wrap gap-1">
                 <SkillTag v-for="skill in item.skills" :name="skill" :key="skill"></SkillTag>

@@ -17,9 +17,7 @@ export const aboutMeContents = [
   {
     key: 3,
     img: "/assets/images/3.jpg",
-    description: `Days passed but none of my friends or people in my neighborhood were interested in
-    game development. On top of that, I had been slapped with the harshness of life. So yeah, I became a web developer and started to get interested in web development.
-    I learned by myself on YouTube, documentation of several technology websites and other written sources.`,
+    description: `Days passed but none of my friends or people in my neighborhood were interested in game development. Transitioning to web engineering, I developed a strong passion for scalable backend architectures and modern web apps, mastering technologies through hands-on practice, documentation, and continuous building.`,
     customStyle: { objectPosition: "15% 0%" },
   },
 ];
@@ -104,7 +102,7 @@ export const educations: TimelineItem[] = [
     at: "Universitas Amikom Yogyakarta",
     from: "September 2022",
     to: "January 2026",
-    content: "Yeah, It takes a long time to finish my undergraduate degree, because I was busy with my freelance work and my first job. I want to thanks to my parents and my family who have supported me to make me able completed my master degree.",
+    content: "Special gratitude to my family for their continuous support throughout my master's degree journey.",
   },
 ];
 
@@ -192,7 +190,7 @@ export const portofolio: PortofolioItem[] = [
       "mysql",
     ],
     description:
-      "We created a product/website to serve retail download services of assets on several well-known and well-known websites that impose a premium system or subscription per month/per year.",
+      "We developed Tanpamerek, a platform to serve on-demand asset download services connecting to premium subscription-based digital asset providers.",
     // detailAction: "/portofolio/tanpamerek",
   },
   {
@@ -235,7 +233,7 @@ export const portofolio: PortofolioItem[] = [
       "mysql",
     ],
     description:
-      "IRE is non-profit organization in Yogyakarta. We developed a they website with a CMS system for efficient content management. The site has separate admin and user sections with attractive designs using React JS and Laravel + Livewire.",
+      "IRE is non-profit organization in Yogyakarta. We developed their organizational website with an intuitive custom CMS for efficient content management. The site has separate admin and user sections with attractive designs using React JS and Laravel + Livewire.",
     // detailAction: "/portofolio/lp-ire",
   },
   {

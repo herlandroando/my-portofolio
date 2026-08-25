@@ -19,7 +19,8 @@
                                             class="dark:bg-slate-600 bg-slate-100 shadow-md absolute w-full h-full justify-center flex"
                                             :style="{ zIndex: contents.length - k, transform: defineTransform(k) }">
                                             <Transition name="fade">
-                                                <img v-if="content.key === selectedContent + 1" :src="content.img"
+                                                <NuxtImg v-if="content.key === selectedContent + 1" :src="content.img"
+                                                    :alt="`About me visual ${content.key}`"
                                                     class="w-full h-auto object-cover" :style="content?.customStyle" />
                                             </Transition>
                                         </div>

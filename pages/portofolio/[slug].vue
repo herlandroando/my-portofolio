@@ -7,7 +7,7 @@
                     <SkillTag v-for="skill in metaInit?.skills" :name="skill"></SkillTag>
                 </div>
                 <div class="object-contain h-[400px] bg-gray-200 dark:bg-gray-800 rounded-md w-full">
-                    <img class="h-full mx-auto" :src="metaInit?.imageUrl" :alt="metaInit?.title" />
+                    <NuxtImg class="h-full mx-auto" :src="metaInit?.imageUrl" :alt="metaInit?.title" format="webp" loading="lazy" placeholder />
                 </div>
                 <UCard class="prose dark:prose-invert w-full ">
                     <h3 class="mt-0">Table of Content</h3>
@@ -68,7 +68,6 @@
 
 <script setup lang="ts">
 import type { MDCParserResult } from '@nuxtjs/mdc/runtime/types/parser';
-import axios from 'axios';
 import _ from 'lodash';
 import { portofolio } from '~/data';
 import type { PortofolioSinglePageMeta } from '~/types/data';

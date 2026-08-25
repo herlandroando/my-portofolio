@@ -78,8 +78,8 @@ The enhancement roadmap is divided into **6 independent, self-contained workstre
    ```
 
 ### Definition of Done
-- [ ] Rich preview cards render properly when sharing URLs on LinkedIn, Discord, and Twitter card validator.
-- [ ] Valid JSON-LD schema with zero errors in Google Rich Results Test.
+- [x] Rich preview cards render properly when sharing URLs on LinkedIn, Discord, and Twitter card validator.
+- [x] Valid JSON-LD schema with zero errors in Google Rich Results Test.
 
 ---
 
@@ -109,8 +109,8 @@ The enhancement roadmap is divided into **6 independent, self-contained workstre
    - Ensure all `skills` arrays in `portofolio` and `experiences` have valid corresponding keys in `utils/createSkillMeta.ts`.
 
 ### Definition of Done
-- [ ] Experiences are sorted with the most recent job displayed at the top.
-- [ ] Clean, professional English copy across all sections.
+- [x] Experiences are sorted with the most recent job displayed at the top.
+- [x] Clean, professional English copy across all sections.
 
 ---
 
@@ -136,9 +136,9 @@ The enhancement roadmap is divided into **6 independent, self-contained workstre
    - Remove `axios` from `package.json` to reduce client bundle size.
 
 ### Definition of Done
-- [ ] Zero unthrottled scroll event listeners on `window` or `document`.
-- [ ] Images served in modern WebP format with lazy loading placeholders.
-- [ ] Nuxt build succeeds without Axios dependency.
+- [x] Zero unthrottled scroll event listeners on `window` or `document`.
+- [x] Images served in modern WebP format with lazy loading placeholders.
+- [x] Nuxt build succeeds without Axios dependency.
 
 ---
 
@@ -171,8 +171,8 @@ The enhancement roadmap is divided into **6 independent, self-contained workstre
    - Example: Clicking Discord copies `herlandrotri#...` or username with visual confirmation: `"Discord ID copied to clipboard!"`.
 
 ### Definition of Done
-- [ ] Resume PDF downloads/opens in new tab smoothly from both Hero and Header.
-- [ ] Email/Discord copy interaction provides instant visual feedback.
+- [x] Resume PDF downloads/opens in new tab smoothly from both Hero and Header.
+- [x] Email/Discord copy interaction provides instant visual feedback.
 
 ---
 
@@ -228,10 +228,10 @@ The enhancement roadmap is divided into **6 independent, self-contained workstre
 
 | Workstream | Priority | Estimated Complexity | Assignee | Status |
 |---|---|---|---|---|
-| **WS1: SEO & Meta** | High | Low (1-2 hrs) | Open | Pending |
-| **WS2: Copy & Data** | High | Low (1-2 hrs) | Open | Pending |
-| **WS3: Performance & Nuxt Image** | High | Medium (2-3 hrs) | Open | Pending |
-| **WS4: Hero & Contact Actions** | Medium | Low (1-2 hrs) | Open | Pending |
+| **WS1: SEO & Meta** | High | Low (1-2 hrs) | AI Assistant | Completed |
+| **WS2: Copy & Data** | High | Low (1-2 hrs) | AI Assistant | Completed |
+| **WS3: Performance & Nuxt Image** | High | Medium (2-3 hrs) | AI Assistant | Completed |
+| **WS4: Hero & Contact Actions** | Medium | Low (1-2 hrs) | AI Assistant | Completed |
 | **WS5: Portfolio Filtering** | Medium | Medium (2-3 hrs) | Open | Pending |
 | **WS6: Case Studies Content** | Low | Medium (Content writing) | Open | Pending |
 
