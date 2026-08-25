@@ -5,7 +5,7 @@
         <TextTitle tag="h2" class="mb-6 w-fit">Experience</TextTitle>
         <div class="md:px-12 px-7">
             <ol class="timeline md:gap-8 gap-24">
-                <TimelineItem v-for="experience in experiences" :is-last-item="experiences.length === experience.key"
+                <TimelineItem v-for="experience in ascExperiences" :is-last-item="experiences.length === experience.key"
                     :key="experience.key" :item="experience"></TimelineItem>
             </ol>
         </div>
@@ -15,6 +15,8 @@
 
 <script setup lang="ts">
 import { experiences } from '~/data';
+
+const ascExperiences = experiences.sort()
 
 </script>
 

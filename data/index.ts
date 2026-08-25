@@ -74,6 +74,17 @@ export const experiences: TimelineItem[] = [
       "- Designing an admin editor such as games, dynamic quizzes and video selection.\n" +
       "- Developing multiple languages (Indonesian and English) for each content.",
   },
+  {
+    key: 4,
+    icon: "mdi:briefcase",
+    role: "System Developer",
+    skill: ["vue","Java"],
+    at: "PT. Panorama JTB Tours Indonesia",
+    from: "July 2024",
+    to: "Now",
+    content:
+      "I can't tell you much here because I'm new here. So wait until I get more stories :)"
+  },
 ];
 
 export const educations: TimelineItem[] = [
@@ -136,7 +147,7 @@ export const portofolio: PortofolioItem[] = [
     skills: ["webDevelopment", "php", "codeigniter3", "js", "jQuery", "mysql"],
     description:
       "Mail archive management website in Condongcatur village. This website uses the Codeigniter 3 framework.",
-    // detailAction: "/portofolio/archive-mail",
+    detailAction: "/portofolio/archive-mail",
   },
   {
     key: 4,

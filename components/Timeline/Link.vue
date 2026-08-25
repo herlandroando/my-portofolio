@@ -7,11 +7,9 @@
 </template>
 
 <script setup lang="ts">
-const { to, external } = withDefaults(defineProps<{
+const { to, external = true } = defineProps<{
     to?: string,
     external?: boolean,
-}>(), {
-    external: true,
-})
+}>()
 
 </script>

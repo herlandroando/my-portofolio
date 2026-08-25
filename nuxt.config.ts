@@ -1,11 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  compatibilityDate:"2026-08-25",
   nitro: { preset: "static" },
   // devtools: { enabled: true },
   ssr: false,
-  modules: ["@nuxt/ui", // "@nuxt/image",
-  "@nuxtjs/google-fonts", "nuxt-icon", "@vueuse/nuxt", "@nuxtjs/mdc"],
-  css: ["assets/css/main.css"],
+  modules: [// "@nuxt/image",
+  "@nuxt/ui", "@nuxtjs/google-fonts", "@vueuse/nuxt", "@nuxtjs/mdc", "@nuxt/icon"],
+  css: ["~/assets/css/main.css"],
   googleFonts: {
     families: {
       Montserrat: true,

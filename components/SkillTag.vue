@@ -10,9 +10,7 @@
 </template>
 
 <script setup lang="ts">
-const { name, color } = withDefaults(defineProps<{ name: string, color?: string }>(), {
-    color: 'cloudburst'
-})
+const { name, color = 'cloudburst' } = defineProps<{ name: string, color?: string }>()
 
 const item = computed(() => createSkillMeta(name))
 </script>
