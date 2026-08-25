@@ -3,6 +3,7 @@ export default defineAppConfig({
     colors: {
       primary: 'cloudburst',
       neutral: 'slate',
+      warning: 'orange',
     },
   },
 })

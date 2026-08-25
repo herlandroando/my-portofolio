@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<{
 const computedColor = computed(() => {
     if (props.color === 'gray') return 'neutral'
     if (props.color === 'cloudburst') return 'primary'
+    if (props.color === 'orange') return 'warning'
     return props.color as any
 })
 

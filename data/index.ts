@@ -103,8 +103,8 @@ export const educations: TimelineItem[] = [
     role: "Master (S2) Informatics",
     at: "Universitas Amikom Yogyakarta",
     from: "September 2022",
-    to: "Now",
-    content: "",
+    to: "January 2026",
+    content: "Yeah, It takes a long time to finish my undergraduate degree, because I was busy with my freelance work and my first job. I want to thanks to my parents and my family who have supported me to make me able completed my master degree.",
   },
 ];
 
