@@ -1,4 +1,19 @@
 /**
+ * About Me Item Type
+ */
+export type AboutMeItem = {
+  key: number;
+  tag?: string;
+  title?: string;
+  subtitle?: string;
+  img: string;
+  description: string;
+  customStyle?: Record<string, string>;
+  skills?: string[];
+  year?: string;
+};
+
+/**
  * Timeline Component Type
  */
 
@@ -39,6 +54,15 @@ type TimelineItemButtonOption = {
 /**
  * Portofolio Item Component Type
  */
+export type PortofolioCategory = "all" | "backend" | "fullstack" | "game" | "web";
+
+export interface PortofolioDirectLinks {
+  github?: string;
+  demo?: string;
+  file?: string;
+  customUrl?: string;
+}
+
 export type PortofolioItem = {
   key: number;
   name: string;
@@ -49,6 +73,8 @@ export type PortofolioItem = {
   imageUrl?: string;
   skills: string[];
   description: string;
+  category?: "backend" | "fullstack" | "game" | "web";
+  directLinks?: PortofolioDirectLinks;
   detailAction?: string | (() => void);
   /**
    * If detailAction is url string, you can make a new tab and the url is external with external=true
@@ -61,6 +87,7 @@ export type PortofolioSinglePageMeta = {
   url?: {
     file?: string;
     github?: string;
+    demo?: string;
     customUrl?: string;
   };
   note?: string;

@@ -1,0 +1,22 @@
+{
+    "applicationName": "Marketplace Laron Application",
+    "url": {
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "A multi-platform village marketplace ecosystem connecting rural local producers with regional consumers.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Backend Developer & API Architect"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Web Admin Frontend Developer (React)"
+        },
+        {
+            "name": "Iqbal Rilo Pambudi",
+            "role": "Android Mobile Developer (Kotlin)"
+        }
+    ]
+}
+

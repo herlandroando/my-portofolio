@@ -3,14 +3,15 @@
     "url": {
         "github": "https://github.com/Lide-Dev/LideArsipan"
     },
+    "note": "A digitized municipal records and correspondence archive system for village governance.",
     "createdBy": [
         {
             "name": "Herlandro Tribiakto",
-            "role": "Web Developer"
+            "role": "Fullstack Web Developer"
         },
         {
             "name": "Akbar Hari Mukti",
-            "role": "Web Developer"
+            "role": "Fullstack Web Developer"
         }
     ]
 }

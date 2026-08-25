@@ -1,0 +1,22 @@
+{
+    "applicationName": "Marketplace Jiwa Jenu Application",
+    "url": {
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "BUMDESA marketplace platform in Jenu, Tuban featuring automated payment gateway processing and settlement tracking.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Backend Developer & Payment Integration Engineer"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Frontend Web Developer (React)"
+        },
+        {
+            "name": "Iqbal Rilo Pambudi",
+            "role": "Mobile Developer (Kotlin)"
+        }
+    ]
+}
+

@@ -1,7 +1,7 @@
 <template>
-    <header class="py-5 fixed w-full top-0 z-[10] dark:bg-stone-950 bg-slate-50 h-20">
+    <header class="py-5 fixed w-full top-0 z-[10] dark:bg-stone-950 bg-slate-50 h-20 border-b border-gray-200/50 dark:border-gray-800/50 backdrop-blur">
         <UContainer class="flex flex-row justify-between items-center">
-            <div class="flex flex-row gap-4">
+            <div class="flex flex-row gap-4 items-center">
                 <UButton class="lg:hidden block" @click="handleOpenSidebar">
                     <Icon name="mdi:menu"></Icon>
                 </UButton>
@@ -21,6 +21,17 @@
                                 <Icon name="mdi:traffic-cone"></Icon> Blog
                             </NavbarLink>
                             <NavbarLink @click="() => openSidebar = false" to="/#contact">Contact</NavbarLink>
+                            <UButton
+                                to="/resume.pdf"
+                                target="_blank"
+                                icon="mdi:file-document-outline"
+                                color="primary"
+                                variant="soft"
+                                class="mt-4 justify-center"
+                                @click="() => openSidebar = false"
+                            >
+                                Resume
+                            </UButton>
                         </div>
                     </template>
                 </USlideover>
@@ -35,14 +46,33 @@
                     <Icon name="mdi:traffic-cone"></Icon> Blog
                 </NavbarLink>
                 <NavbarLink to="/#contact">Contact</NavbarLink>
-
             </div>
             <div class="flex flex-row gap-3 items-center">
+                <UButton
+                    to="/resume.pdf"
+                    target="_blank"
+                    icon="mdi:file-document-outline"
+                    color="primary"
+                    variant="soft"
+                    size="sm"
+                    class="hidden sm:inline-flex"
+                >
+                    Resume
+                </UButton>
                 <ClientOnly v-if="!colorMode?.forced">
                     <UButton
                         variant="outline"
                         :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
-                        @click="isDark = !isDark">
+                        @click="isDark = !isDark"
+                    >
+                        <Icon v-if="isDark" name="mdi:weather-night" size="20"></Icon>
+                        <Icon v-else name="mdi:weather-sunny" size="20"></Icon>
+                    </UButton>
+                </ClientOnly>
+            </div>
+        </UContainer>
+    </header>
+    <UContainer>
         <div class="mt-[80px]"></div>
         <slot></slot>
     </UContainer>
@@ -79,7 +109,7 @@ const openSidebar = ref(false);
 const notOnTop = ref(false);
 const { x, y } = useWindowScroll()
 
-watch([x, y], ([x, y], [xO, yO]) => {
+watch([x, y], ([x, y]) => {
     if (y > 100 && !notOnTop.value) {
         notOnTop.value = true
         return;
@@ -98,9 +128,17 @@ const isDark = computed({
         colorMode.preference = colorMode.value === 'dark' ? 'light' : 'dark'
     }
 })
+
+function handleOpenSidebar() {
+    openSidebar.value = true;
+}
+
+function handleAlertConstruction() {
+    openSidebar.value = false;
+    openAlertConstruction.value = true;
 }
 
 function handleClickTop() {
-    window.scrollTo(0, 0)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 </script>

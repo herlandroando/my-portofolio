@@ -1,0 +1,19 @@
+{
+    "applicationName": "Landing Page IRE with CMS",
+    "url": {
+        "demo": "https://ireyogyakarta.org",
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "Official organizational web portal and custom content management system for IRE Yogyakarta.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Fullstack Developer & System Architect"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Frontend Developer (React)"
+        }
+    ]
+}
+

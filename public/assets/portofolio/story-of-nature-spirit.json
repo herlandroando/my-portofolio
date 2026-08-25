@@ -1,0 +1,22 @@
+{
+    "applicationName": "Story of Nature Spirit",
+    "url": {
+        "github": "https://github.com/herlandroando"
+    },
+    "note": "RPG Game developed with Godot Engine and GDScript for the AMICTA 2020 competition at Universitas Amikom Yogyakarta.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Programmer & Game Design"
+        },
+        {
+            "name": "Rhaka Novyansyah Dewanto",
+            "role": "Game Design & Story Writer"
+        },
+        {
+            "name": "Destri Herliana Irianti",
+            "role": "Graphic Design & 2D Asset Artist"
+        }
+    ]
+}
+

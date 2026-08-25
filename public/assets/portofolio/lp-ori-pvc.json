@@ -1,0 +1,18 @@
+{
+    "applicationName": "Landing Page PT. Panorama Varia Cipta with CMS",
+    "url": {
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "Corporate profile and dynamic product catalogue CMS for architectural PVC ceiling distributor PT Panorama Varia Cipta.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Fullstack Developer & CMS Architect"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Frontend Developer (React)"
+        }
+    ]
+}
+

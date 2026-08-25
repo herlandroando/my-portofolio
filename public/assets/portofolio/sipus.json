@@ -1,0 +1,22 @@
+{
+    "applicationName": "Information System for Fertile Age Couples in Bantul (SIPUS)",
+    "url": {
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "Healthcare information management platform for regional maternal and child health tracking in Bantul, Yogyakarta.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Backend Developer & Database Architect"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Frontend Developer (React)"
+        },
+        {
+            "name": "Ridwan Al Akhyar Aunurrohim",
+            "role": "UI/UX Designer & Researcher"
+        }
+    ]
+}
+

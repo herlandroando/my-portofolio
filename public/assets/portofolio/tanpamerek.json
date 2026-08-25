@@ -1,0 +1,18 @@
+{
+    "applicationName": "Tanpamerek",
+    "url": {
+        "github": "https://github.com/Lide-Dev"
+    },
+    "note": "On-demand digital asset download platform with automated credit billing and payment gateway integration.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Backend Developer & Architecture"
+        },
+        {
+            "name": "Akbar Hari Mukti",
+            "role": "Frontend Developer"
+        }
+    ]
+}
+
