@@ -54,7 +54,9 @@ type TimelineItemButtonOption = {
 /**
  * Portofolio Item Component Type
  */
-export type PortofolioCategory = "all" | "backend" | "fullstack" | "game" | "web";
+export type PortofolioCategory = "all" | "backend" | "fullstack" | "game" | "web" | "desktop";
+
+export type PortofolioScope = "all" | "client" | "self";
 
 export interface PortofolioDirectLinks {
   github?: string;
@@ -73,7 +75,8 @@ export type PortofolioItem = {
   imageUrl?: string;
   skills: string[];
   description: string;
-  category?: "backend" | "fullstack" | "game" | "web";
+  category?: "backend" | "fullstack" | "game" | "web" | "desktop";
+  scope?: "client" | "self";
   directLinks?: PortofolioDirectLinks;
   detailAction?: string | (() => void);
   /**
