@@ -1,36 +1,31 @@
 <template>
-    <section id="experience" class="relative mt-28 md:justify-between items-center justify-center md:gap-7 gap-20">
-        <!-- <h2 class="font-black md:text-4xl text-3xl mb-6 w-fit">
-            Experience</h2> -->
-        <TextTitle tag="h2" class="mb-6 w-fit">Experience</TextTitle>
-        <div class="md:px-12 px-7">
-            <ol class="timeline md:gap-8 gap-24">
-                <TimelineItem v-for="(experience, index) in sortedExperiences" :is-last-item="index === sortedExperiences.length - 1"
-                    :key="experience.key" :item="experience"></TimelineItem>
+    <section id="experience" class="relative mt-16 md:mt-24 w-full">
+        <div class="mb-6">
+            <TextTitle tag="h2" class="w-fit">Experience</TextTitle>
+            <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
+                Engineering roles, system architecture, and professional milestones.
+            </p>
+        </div>
+        <div class="max-w-3xl">
+            <ol class="flex flex-col p-0 m-0">
+                <TimelineItem
+                    v-for="(experience, index) in sortedExperiences"
+                    :is-last-item="index === sortedExperiences.length - 1"
+                    :key="experience.key"
+                    :item="experience"
+                />
             </ol>
         </div>
     </section>
-
 </template>
 
 <script setup lang="ts">
 import { experiences } from '~/data';
 
 const sortedExperiences = computed(() => [...experiences].sort((a, b) => b.key - a.key))
-
 </script>
 
 <style>
-.timeline {
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 32px 0 32px 32px;
-    font-size: 1.125rem;
-    position: relative;
-}
-
 .fade-down-enter-active,
 .fade-down-leave-active,
 .fade-up-enter-active,

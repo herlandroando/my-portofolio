@@ -1,29 +1,35 @@
 <template>
     <UCard
         v-scroll-detect="handleScrollDetect"
-        class="h-full cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 group border border-gray-200/80 dark:border-stone-800 rounded-2xl overflow-hidden"
+        class="h-full cursor-pointer transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group border border-gray-200/80 dark:border-stone-800 rounded-2xl overflow-hidden"
         :class="computedClassTransition"
         :ui="{
-            body: 'h-full px-5 py-5 sm:p-6 flex flex-col justify-between',
+            body: 'h-full p-4 sm:p-5 flex flex-col justify-between',
         }"
     >
-        <div class="flex flex-col gap-3 relative h-full">
+        <div class="flex flex-col gap-2.5 relative h-full">
             <!-- Card Header -->
             <div class="flex flex-row justify-between items-start gap-2">
-                <div class="text-xs">
-                    <TextSubTitle tag="h3" class="group-hover:text-primary-500 transition-colors text-base sm:text-lg font-bold">
+                <div class="text-xs min-w-0">
+                    <TextSubTitle tag="h3" class="group-hover:text-primary-500 transition-colors text-sm sm:text-base font-bold truncate">
                         {{ item.title }}
                     </TextSubTitle>
-                    <p class="font-semibold text-gray-600 dark:text-gray-300 mt-0.5">{{ item.role }}</p>
-                    <p class="text-xs text-gray-400 dark:text-gray-500">{{ item.at }} • {{ item.date }}</p>
+                    <p class="font-medium text-xs text-gray-600 dark:text-gray-300 mt-0.5 truncate">{{ item.role }}</p>
+                    <p class="text-[11px] text-gray-400 dark:text-gray-500">{{ item.at }} • {{ item.date }}</p>
                 </div>
-                <UBadge v-if="categoryBadge" :color="categoryBadge.color" variant="subtle" size="sm" class="capitalize shrink-0">
-                    {{ categoryBadge.label }}
-                </UBadge>
+                <div class="flex flex-col items-end gap-1 shrink-0">
+                    <UBadge v-if="categoryBadge" :color="categoryBadge.color" variant="subtle" size="xs" class="capitalize">
+                        {{ categoryBadge.label }}
+                    </UBadge>
+                    <UBadge v-if="scopeBadge" :color="scopeBadge.color" variant="outline" size="xs" class="font-medium">
+                        <Icon v-if="scopeBadge.icon" :name="scopeBadge.icon" class="mr-1" size="10" />
+                        {{ scopeBadge.label }}
+                    </UBadge>
+                </div>
             </div>
 
             <!-- Image with Zoom on Hover -->
-            <div class="h-[220px] sm:h-[240px] overflow-hidden rounded-xl bg-gray-100 dark:bg-stone-800 relative group/img">
+            <div class="h-[180px] sm:h-[200px] overflow-hidden rounded-xl bg-gray-100 dark:bg-stone-800 relative group/img">
                 <NuxtImg
                     class="rounded-xl h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                     :src="item.imageUrl"
@@ -32,27 +38,27 @@
                     loading="lazy"
                     placeholder
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-3">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span class="text-white text-xs font-medium flex items-center gap-1">
-                        <Icon name="mdi:eye-outline" size="16" /> Click for Quick Overview
+                        <Icon name="mdi:eye-outline" size="14" /> Quick Overview
                     </span>
                 </div>
             </div>
 
             <!-- Skill Badges -->
-            <div class="flex flex-row flex-wrap gap-1.5">
-                <SkillTag v-for="skill in item.skills" :name="skill" :key="skill" class="!text-xs" />
+            <div class="flex flex-row flex-wrap gap-1">
+                <SkillTag v-for="skill in item.skills" :name="skill" :key="skill" class="!text-[10px]" />
             </div>
 
             <!-- Description -->
-            <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-                <p class="line-clamp-3">{{ item.description }}</p>
+            <div class="text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p class="line-clamp-2 sm:line-clamp-3">{{ item.description }}</p>
             </div>
 
             <!-- Card Footer -->
-            <div class="flex flex-row items-center justify-between mt-auto pt-3 border-t border-gray-100 dark:border-stone-800 gap-2">
+            <div class="flex flex-row items-center justify-between mt-auto pt-2.5 border-t border-gray-100 dark:border-stone-800 gap-2">
                 <!-- Direct quick actions (GitHub, Demo, File) -->
-                <div class="flex flex-row gap-1.5 items-center">
+                <div class="flex flex-row gap-1 items-center">
                     <UButton
                         v-if="item.directLinks?.github"
                         :to="item.directLinks.github"
@@ -63,7 +69,7 @@
                         color="neutral"
                         icon="mdi:github"
                         aria-label="Source code on GitHub"
-                        class="hover:scale-105 transition-transform"
+                        class="hover:scale-105 transition-transform text-[11px]"
                         @click.stop
                     >
                         Source
@@ -78,7 +84,7 @@
                         color="primary"
                         icon="mdi:open-in-new"
                         aria-label="Live Demo"
-                        class="hover:scale-105 transition-transform"
+                        class="hover:scale-105 transition-transform text-[11px]"
                         @click.stop
                     >
                         Demo
@@ -93,7 +99,7 @@
                         color="neutral"
                         icon="mdi:download"
                         aria-label="Download Build"
-                        class="hover:scale-105 transition-transform"
+                        class="hover:scale-105 transition-transform text-[11px]"
                         @click.stop
                     >
                         Download
@@ -107,15 +113,15 @@
                         :to="item.detailAction"
                         variant="link"
                         color="primary"
-                        size="sm"
+                        size="xs"
                         trailing-icon="mdi:arrow-right"
-                        class="p-0 font-semibold"
+                        class="p-0 font-semibold text-xs"
                         @click.stop
                     >
                         Case Study
                     </UButton>
-                    <span v-else class="text-xs text-amber-500 flex items-center gap-1">
-                        <Icon name="mdi:traffic-cone" size="14"></Icon> Coming Soon
+                    <span v-else class="text-[11px] text-amber-500 flex items-center gap-1">
+                        <Icon name="mdi:traffic-cone" size="13"></Icon> Coming Soon
                     </span>
                 </div>
             </div>
@@ -127,21 +133,17 @@
 import type { PortofolioItem } from '~/types/data';
 import type { FunctionScrollDetect } from '~/types/plugins';
 
-const key = getCurrentInstance()?.vnode.key as number ?? 1;
-
 const { item } = defineProps<{ item: PortofolioItem }>();
 const visible = ref(false);
 
 const computedClassTransition = computed(() => {
-    if (visible.value) {
-        return "translate-x-0 opacity-100";
-    } else {
-        return key % 2 ? "translate-x-[-1rem] opacity-0" : "translate-x-[1rem] opacity-0";
-    }
+    return visible.value ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0";
 });
 
 const categoryBadge = computed(() => {
     switch (item.category) {
+        case 'desktop':
+            return { label: 'Desktop & Tools', color: 'primary' as const };
         case 'backend':
             return { label: 'Backend & API', color: 'info' as const };
         case 'fullstack':
@@ -151,6 +153,16 @@ const categoryBadge = computed(() => {
         default:
             return null;
     }
+});
+
+const scopeBadge = computed(() => {
+    if (item.scope === 'self') {
+        return { label: 'Self Project', color: 'primary' as const, icon: 'mdi:rocket-launch-outline' };
+    }
+    if (item.scope === 'client') {
+        return { label: 'Client Work', color: 'neutral' as const, icon: 'mdi:briefcase-outline' };
+    }
+    return null;
 });
 
 const handleScrollDetect: FunctionScrollDetect = {

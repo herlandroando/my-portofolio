@@ -1,10 +1,10 @@
 <template>
-    <section id="about-me" ref="aboutMeRef" class="relative mt-20 md:mt-32 w-full">
+    <section id="about-me" ref="aboutMeRef" class="relative mt-16 md:mt-24 w-full">
         <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-6">
             <div>
                 <TextTitle tag="h2" class="w-fit">About Me</TextTitle>
-                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
+                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1 max-w-xl">
                     My journey from crafting custom Warcraft 3 maps to architecting scalable modern web systems.
                 </p>
             </div>
@@ -16,9 +16,9 @@
                     :key="item.key"
                     @click="setActiveIndex(index)"
                     :class="[
-                        'px-3 py-1.5 rounded-full text-xs font-medium transition-all duration-300 flex items-center gap-1.5 cursor-pointer border',
+                        'px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-300 flex items-center gap-1.5 cursor-pointer border',
                         activeIndex === index
-                            ? 'bg-cloudburst-500 text-white border-cloudburst-500 shadow-md shadow-cloudburst-500/20 scale-105'
+                            ? 'bg-cloudburst-500 text-white border-cloudburst-500 shadow-xs scale-105'
                             : 'bg-gray-100 dark:bg-stone-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-stone-700 hover:border-cloudburst-400/50'
                     ]"
                 >
@@ -29,17 +29,17 @@
         </div>
 
         <!-- Main Content Card Container -->
-        <div class="relative bg-white/70 dark:bg-stone-900/70 backdrop-blur-md rounded-3xl p-6 sm:p-8 md:p-10 border border-gray-200/80 dark:border-stone-800 shadow-xl overflow-hidden">
+        <div class="relative bg-white/70 dark:bg-stone-900/70 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 sm:p-7 md:p-8 border border-gray-200/80 dark:border-stone-800 shadow-lg overflow-hidden">
             <!-- Background Ambient Glow -->
             <div class="absolute -top-24 -right-24 w-72 h-72 bg-cloudburst-500/10 rounded-full blur-3xl pointer-events-none" />
             <div class="absolute -bottom-24 -left-24 w-72 h-72 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-center relative z-10">
                 <!-- Left Column: Interactive 3D Card Stack -->
                 <div class="lg:col-span-5 flex flex-col items-center">
                     <div
                         ref="cardDeckRef"
-                        class="relative w-full max-w-[320px] sm:max-w-[360px] h-[320px] sm:h-[360px] cursor-pointer select-none perspective-1000"
+                        class="relative w-full max-w-[280px] sm:max-w-[320px] h-[280px] sm:h-[320px] cursor-pointer select-none perspective-1000"
                         @click="handleDeckClick"
                     >
                         <!-- Stacked Cards Loop -->
@@ -105,40 +105,40 @@
                 <!-- Right Column: Story Narrative & Details -->
                 <div class="lg:col-span-7 flex flex-col justify-between">
                     <Transition name="fade-slide" mode="out-in">
-                        <div :key="activeIndex" class="space-y-4">
+                        <div v-if="currentItem" :key="activeIndex" class="space-y-3">
                             <!-- Chapter Indicator -->
                             <div class="flex items-center gap-2">
                                 <UBadge color="primary" variant="subtle" size="sm" class="font-mono uppercase tracking-wider text-xs">
-                                    Chapter 0{{ currentItem.key }} / 0{{ contents.length }}
+                                    Chapter 0{{ currentItem?.key }} / 0{{ contents.length }}
                                 </UBadge>
-                                <span v-if="currentItem.year" class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-                                    {{ currentItem.year }}
+                                <span v-if="currentItem?.year" class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+                                    {{ currentItem?.year }}
                                 </span>
                             </div>
 
                             <!-- Title & Subtitle -->
                             <div>
-                                <h3 class="text-2xl sm:text-3xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
-                                    {{ currentItem.title }}
+                                <h3 class="text-xl sm:text-2xl font-black text-slate-800 dark:text-slate-100 tracking-tight">
+                                    {{ currentItem?.title }}
                                 </h3>
-                                <p v-if="currentItem.subtitle" class="text-sm font-semibold text-cloudburst-600 dark:text-cloudburst-400 mt-1">
-                                    {{ currentItem.subtitle }}
+                                <p v-if="currentItem?.subtitle" class="text-xs sm:text-sm font-semibold text-cloudburst-600 dark:text-cloudburst-400 mt-0.5">
+                                    {{ currentItem?.subtitle }}
                                 </p>
                             </div>
 
                             <!-- Narrative Paragraph -->
-                            <p class="text-sm sm:text-base text-gray-600 dark:text-gray-300 leading-relaxed min-h-[100px]">
-                                {{ currentItem.description }}
+                            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed min-h-[60px]">
+                                {{ currentItem?.description }}
                             </p>
 
                             <!-- Key Skills / Highlights for this phase -->
-                            <div v-if="currentItem.skills && currentItem.skills.length > 0" class="pt-2">
-                                <p class="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">
+                            <div v-if="currentItem?.skills && currentItem.skills.length > 0" class="pt-1">
+                                <p class="text-[11px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1.5">
                                     Core Focus & Tools
                                 </p>
                                 <div class="flex flex-wrap gap-1.5">
                                     <SkillTag
-                                        v-for="skill in currentItem.skills"
+                                        v-for="skill in currentItem?.skills"
                                         :key="skill"
                                         :name="skill"
                                         class="!text-xs"
@@ -149,7 +149,7 @@
                     </Transition>
 
                     <!-- Bottom Nav Controls & Progress Bar -->
-                    <div class="pt-8 mt-6 border-t border-gray-100 dark:border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="pt-5 mt-4 border-t border-gray-100 dark:border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-3">
                         <!-- Progress Dots -->
                         <div class="flex items-center gap-2">
                             <button
@@ -208,37 +208,31 @@
         </div>
 
         <!-- High-Res Image Zoom Modal -->
-        <UModal v-model="zoomModalOpen">
-            <UCard v-if="zoomedItem" class="overflow-hidden bg-stone-900 border-stone-800">
-                <template #header>
-                    <div class="flex items-center justify-between">
-                        <div class="text-white">
-                            <h4 class="font-bold text-base">{{ zoomedItem.title }}</h4>
-                            <p class="text-xs text-gray-400">{{ zoomedItem.tag }} • {{ zoomedItem.subtitle }}</p>
+        <UModal v-model:open="zoomModalOpen">
+            <template #content>
+                <div v-if="zoomedItem" class="p-4 sm:p-6 bg-white dark:bg-stone-900 rounded-2xl max-w-2xl w-full">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <h4 class="font-bold text-base text-slate-900 dark:text-white">{{ zoomedItem.title }}</h4>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">{{ zoomedItem.subtitle || zoomedItem.year }}</p>
                         </div>
-                        <UButton
-                            color="neutral"
-                            variant="ghost"
-                            icon="mdi:close"
-                            size="xs"
-                            @click="zoomModalOpen = false"
+                        <UButton variant="ghost" color="neutral" size="sm" @click="zoomModalOpen = false">
+                            <Icon name="mdi:close" size="20" />
+                        </UButton>
+                    </div>
+                    <div class="rounded-xl overflow-hidden bg-stone-950 max-h-[60vh]">
+                        <NuxtImg
+                            :src="zoomedItem.img"
+                            :alt="zoomedItem.title"
+                            class="w-full h-full object-contain"
+                            format="webp"
                         />
                     </div>
-                </template>
-
-                <div class="flex justify-center items-center bg-black/40 rounded-xl overflow-hidden max-h-[70vh]">
-                    <NuxtImg
-                        :src="zoomedItem.img"
-                        :alt="zoomedItem.title || 'About me full image'"
-                        class="max-h-[65vh] w-auto object-contain rounded-lg"
-                        format="webp"
-                    />
+                    <p class="text-xs text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">
+                        {{ zoomedItem.description }}
+                    </p>
                 </div>
-
-                <p class="text-xs text-gray-300 mt-4 leading-relaxed">
-                    {{ zoomedItem.description }}
-                </p>
-            </UCard>
+            </template>
         </UModal>
     </section>
 </template>
@@ -255,7 +249,7 @@ const contents: AboutMeItem[] = aboutMeContents;
 const activeIndex = ref(0);
 const cardDeckRef = ref<HTMLElement | null>(null);
 
-const currentItem = computed(() => contents[activeIndex.value] || contents[0]);
+const currentItem = computed<AboutMeItem>(() => contents[activeIndex.value] ?? contents[0]!);
 
 // Zoom Modal State
 const zoomModalOpen = ref(false);

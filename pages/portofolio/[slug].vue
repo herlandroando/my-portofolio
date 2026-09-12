@@ -12,9 +12,15 @@
             >
                 Back to Portfolio
             </UButton>
-            <UBadge v-if="categoryBadge" :color="categoryBadge.color" variant="subtle" size="sm" class="capitalize">
-                {{ categoryBadge.label }}
-            </UBadge>
+            <div class="flex items-center gap-2">
+                <UBadge v-if="categoryBadge" :color="categoryBadge.color" variant="subtle" size="sm" class="capitalize">
+                    {{ categoryBadge.label }}
+                </UBadge>
+                <UBadge v-if="scopeBadge" :color="scopeBadge.color" variant="outline" size="xs" class="font-medium">
+                    <Icon v-if="scopeBadge.icon" :name="scopeBadge.icon" class="mr-1" size="12" />
+                    {{ scopeBadge.label }}
+                </UBadge>
+            </div>
         </div>
 
         <template v-if="!pending && data">
@@ -208,6 +214,8 @@ const nextProject = computed(() => {
 const categoryBadge = computed(() => {
     if (!metaInit.value?.category) return null;
     switch (metaInit.value.category) {
+        case 'desktop':
+            return { label: 'Desktop & Tools', color: 'primary' as const };
         case 'backend':
             return { label: 'Backend & API', color: 'info' as const };
         case 'fullstack':
@@ -217,6 +225,16 @@ const categoryBadge = computed(() => {
         default:
             return null;
     }
+});
+
+const scopeBadge = computed(() => {
+    if (metaInit.value?.scope === 'self') {
+        return { label: 'Self Project', color: 'primary' as const, icon: 'mdi:rocket-launch-outline' };
+    }
+    if (metaInit.value?.scope === 'client') {
+        return { label: 'Client Work', color: 'neutral' as const, icon: 'mdi:briefcase-outline' };
+    }
+    return null;
 });
 
 const { pending, data, error, status } = await useAsyncData(`portofolio-${slug}`, () => fetchingLocalData(slug), {

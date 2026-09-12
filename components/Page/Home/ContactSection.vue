@@ -1,70 +1,71 @@
 <template>
     <section id="contact"
-        class="relative mt-32 mb-28 flex flex-col items-center justify-center text-center">
+        class="relative mt-16 md:mt-24 mb-16 md:mb-20 flex flex-col items-center justify-center text-center">
         
         <!-- Live Location & Time Widget -->
-        <div class="mb-6 inline-flex items-center gap-3 px-4 py-2 rounded-2xl bg-gray-50 dark:bg-stone-900 border border-gray-200 dark:border-stone-800 shadow-xs text-xs sm:text-sm">
+        <div class="mb-5 inline-flex items-center gap-2 sm:gap-3 px-3.5 py-1.5 rounded-full bg-gray-50 dark:bg-stone-900 border border-gray-200 dark:border-stone-800 shadow-xs text-xs">
             <span class="flex items-center gap-1.5 text-gray-600 dark:text-gray-300">
-                <Icon name="mdi:map-marker-outline" class="text-red-500" size="18" />
-                <span>Yogyakarta, Indonesia (GMT+7)</span>
+                <Icon name="mdi:map-marker-outline" class="text-red-500" size="16" />
+                <span>Yogyakarta, ID (GMT+7)</span>
             </span>
             <span class="text-gray-300 dark:text-stone-700">|</span>
             <span class="font-mono font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-                <Icon name="mdi:clock-outline" class="text-cloudburst-500" size="16" />
+                <Icon name="mdi:clock-outline" class="text-cloudburst-500" size="14" />
                 <span>{{ currentTimeStr }}</span>
             </span>
             <span class="text-gray-300 dark:text-stone-700 hidden sm:inline">|</span>
             <span class="hidden sm:inline-flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-medium">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
                 <span>{{ currentWorkStatus }}</span>
             </span>
         </div>
 
-        <TextTitle tag="h2" class="mb-4 text-center">Let's Build Something Great Together</TextTitle>
-        <p class="md:w-[70%] w-full text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed mb-8">
+        <TextTitle tag="h2" class="mb-3 text-center">Let's Build Something Great Together</TextTitle>
+        <p class="md:w-[65%] w-full text-gray-600 dark:text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
             Whether you have an upcoming project, a backend architecture puzzle, or an engineering role open, my inbox is always open.
         </p>
 
         <!-- Quick Mail Generator Templates -->
-        <div class="w-full max-w-2xl bg-gray-50/70 dark:bg-stone-900/60 p-6 rounded-3xl border border-gray-200/80 dark:border-stone-800 mb-10 shadow-sm">
-            <div class="text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-3">
+        <div class="w-full max-w-2xl bg-gray-50/70 dark:bg-stone-900/60 p-4 sm:p-5 rounded-2xl border border-gray-200/80 dark:border-stone-800 mb-6 shadow-xs">
+            <div class="text-[11px] font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-2.5 text-left">
                 Quick Inquiries
             </div>
-            <div class="grid sm:grid-cols-3 gap-2.5">
+            <div class="grid sm:grid-cols-3 gap-2">
                 <button
                     v-for="tpl in emailTemplates"
                     :key="tpl.title"
-                    class="p-3 rounded-xl bg-white dark:bg-stone-800 border border-gray-200/80 dark:border-stone-700/80 text-left hover:border-cloudburst-400 dark:hover:border-cloudburst-500 hover:shadow-md transition-all cursor-pointer group"
+                    class="p-2.5 rounded-xl bg-white dark:bg-stone-800 border border-gray-200/80 dark:border-stone-700/80 text-left hover:border-cloudburst-400 dark:hover:border-cloudburst-500 hover:shadow-xs transition-all cursor-pointer group"
                     @click="openMailClient(tpl)"
                 >
                     <div class="flex items-center justify-between mb-1">
-                        <span class="text-lg">{{ tpl.icon }}</span>
-                        <Icon name="mdi:arrow-top-right" size="14" class="text-gray-400 group-hover:text-cloudburst-500 transition-colors" />
+                        <span class="text-base">{{ tpl.icon }}</span>
+                        <Icon name="mdi:arrow-top-right" size="13" class="text-gray-400 group-hover:text-cloudburst-500 transition-colors" />
                     </div>
                     <div class="font-semibold text-xs text-slate-800 dark:text-slate-100">{{ tpl.title }}</div>
-                    <div class="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5 line-clamp-1">{{ tpl.subtitle }}</div>
+                    <div class="text-[10px] text-gray-400 dark:text-gray-500 mt-0.5 line-clamp-1">{{ tpl.subtitle }}</div>
                 </button>
             </div>
         </div>
 
         <!-- Social Media & Copy Buttons -->
-        <div class="flex flex-row flex-wrap justify-center gap-3">
+        <div class="flex flex-row flex-wrap justify-center gap-2">
             <template v-for="media in myMedia" :key="media.label">
                 <UTooltip :text="media.copyValue ? (copiedItem === media.label ? 'Copied to clipboard!' : `Click to copy ${media.label}`) : `Visit ${media.label}`">
                     <UButton
                         v-if="media.copyValue"
                         :aria-label="`Copy ${media.label}`"
-                        class="rounded-2xl px-4 py-3 transition-all hover:scale-105 shadow-xs flex items-center gap-2"
+                        class="rounded-xl px-3.5 py-2 transition-all hover:scale-105 shadow-xs flex items-center gap-1.5"
                         :color="copiedItem === media.label ? 'success' : 'neutral'"
                         variant="soft"
+                        size="sm"
                         @click="handleCopy(media)"
                     >
-                        <Icon size="20" :name="copiedItem === media.label ? 'mdi:check' : media.icon" />
+                        <Icon size="18" :name="copiedItem === media.label ? 'mdi:check' : media.icon" />
                         <span class="text-xs font-semibold">{{ media.label }}</span>
                     </UButton>
                     <NuxtLink v-else :aria-label="media.label" :to="media.link" :external="true" target="_blank">
-                        <UButton class="rounded-2xl px-4 py-3 transition-all hover:scale-105 shadow-xs flex items-center gap-2" color="neutral" variant="soft">
-                            <Icon size="20" :name="media.icon" />
+                        <UButton class="rounded-xl px-3.5 py-2 transition-all hover:scale-105 shadow-xs flex items-center gap-1.5" color="neutral" variant="soft" size="sm">
+                            <Icon size="18" :name="media.icon" />
                             <span class="text-xs font-semibold">{{ media.label }}</span>
                         </UButton>
                     </NuxtLink>

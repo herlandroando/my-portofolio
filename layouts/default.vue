@@ -1,17 +1,20 @@
 <template>
-    <header class="py-5 fixed w-full top-0 z-[10] dark:bg-stone-950 bg-slate-50 h-20 border-b border-gray-200/50 dark:border-gray-800/50 backdrop-blur">
-        <UContainer class="flex flex-row justify-between items-center">
-            <div class="flex flex-row gap-4 items-center">
-                <UButton class="lg:hidden block" @click="handleOpenSidebar">
-                    <Icon name="mdi:menu"></Icon>
+    <header class="fixed w-full top-0 z-[10] dark:bg-stone-950/85 bg-white/85 h-[60px] border-b border-gray-200/60 dark:border-stone-800/60 backdrop-blur-md transition-colors">
+        <UContainer class="h-full flex flex-row justify-between items-center">
+            <div class="flex flex-row gap-3 items-center">
+                <UButton class="lg:hidden block" variant="ghost" color="neutral" size="sm" @click="handleOpenSidebar">
+                    <Icon name="mdi:menu" size="20"></Icon>
                 </UButton>
                 <USlideover side="left" v-model:open="openSidebar">
                     <template #content>
-                        <div class="p-4 flex flex-col h-full justify-center gap-6 relative">
-                            <div class="absolute top-0 mt-8">
-                                <UButton class="p-2" @click="() => openSidebar = false">
-                                    <Icon name="mdi:close" size="24"></Icon>
+                        <div class="p-5 flex flex-col h-full justify-center gap-5 relative bg-white dark:bg-stone-950">
+                            <div class="absolute top-4 right-4">
+                                <UButton variant="ghost" color="neutral" size="sm" class="p-2" @click="() => openSidebar = false">
+                                    <Icon name="mdi:close" size="22"></Icon>
                                 </UButton>
+                            </div>
+                            <div class="mb-4">
+                                <Logo></Logo>
                             </div>
                             <NavbarLink @click="() => openSidebar = false" to="/#about-me">About Me</NavbarLink>
                             <NavbarLink @click="() => openSidebar = false" to="/#experience">Experience</NavbarLink>
@@ -21,23 +24,12 @@
                                 <Icon name="mdi:traffic-cone"></Icon> Blog
                             </NavbarLink>
                             <NavbarLink @click="() => openSidebar = false" to="/#contact">Contact</NavbarLink>
-                            <UButton
-                                to="/resume.pdf"
-                                target="_blank"
-                                icon="mdi:file-document-outline"
-                                color="primary"
-                                variant="soft"
-                                class="mt-4 justify-center"
-                                @click="() => openSidebar = false"
-                            >
-                                Resume
-                            </UButton>
                         </div>
                     </template>
                 </USlideover>
                 <Logo></Logo>
             </div>
-            <div class="flex-row justify-center gap-3 lg:flex hidden items-center">
+            <div class="flex-row justify-center gap-2 lg:flex hidden items-center text-sm">
                 <NavbarLink to="/#about-me">About Me</NavbarLink>
                 <NavbarLink to="/#experience">Experience</NavbarLink>
                 <NavbarLink to="/#education">Education</NavbarLink>
@@ -47,33 +39,24 @@
                 </NavbarLink>
                 <NavbarLink to="/#contact">Contact</NavbarLink>
             </div>
-            <div class="flex flex-row gap-3 items-center">
-                <UButton
-                    to="/resume.pdf"
-                    target="_blank"
-                    icon="mdi:file-document-outline"
-                    color="primary"
-                    variant="soft"
-                    size="sm"
-                    class="hidden sm:inline-flex"
-                >
-                    Resume
-                </UButton>
+            <div class="flex flex-row gap-2 items-center">
                 <ClientOnly v-if="!colorMode?.forced">
                     <UButton
-                        variant="outline"
+                        variant="ghost"
+                        color="neutral"
+                        size="sm"
                         :aria-label="isDark ? 'Switch to light mode' : 'Switch to dark mode'"
                         @click="isDark = !isDark"
                     >
-                        <Icon v-if="isDark" name="mdi:weather-night" size="20"></Icon>
-                        <Icon v-else name="mdi:weather-sunny" size="20"></Icon>
+                        <Icon v-if="isDark" name="mdi:weather-night" size="18"></Icon>
+                        <Icon v-else name="mdi:weather-sunny" size="18"></Icon>
                     </UButton>
                 </ClientOnly>
             </div>
         </UContainer>
     </header>
     <UContainer>
-        <div class="mt-[80px]"></div>
+        <div class="mt-[60px]"></div>
         <slot></slot>
     </UContainer>
     <footer class="dark:bg-stone-950 bg-slate-50 flex-col flex justify-center items-center mt-24 w-full p-6 gap-1">
