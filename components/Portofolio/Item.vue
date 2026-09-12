@@ -34,9 +34,7 @@
                     class="rounded-xl h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
                     :src="item.imageUrl"
                     :alt="item.title"
-                    format="webp"
                     loading="lazy"
-                    placeholder
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300 flex items-end p-2.5">
                     <span class="text-white text-xs font-medium flex items-center gap-1">

@@ -68,6 +68,9 @@ export default defineNuxtConfig({
     "@nuxtjs/mdc",
     "@nuxt/image",
   ],
+  image: {
+    provider: "none",
+  },
   icon: {
     clientBundle: {
       scan: false,

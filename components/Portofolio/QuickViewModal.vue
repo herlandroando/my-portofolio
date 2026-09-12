@@ -27,7 +27,6 @@
                         :src="item.imageUrl"
                         :alt="item.title"
                         class="w-full h-full object-cover"
-                        format="webp"
                         loading="lazy"
                     />
                 </div>

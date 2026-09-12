@@ -56,7 +56,6 @@
                                     :alt="item.title || `About me story ${item.key}`"
                                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                     :style="item.customStyle"
-                                    format="webp"
                                     loading="lazy"
                                     @error="handleImageError(item.key)"
                                 />
@@ -225,7 +224,6 @@
                             :src="zoomedItem.img"
                             :alt="zoomedItem.title"
                             class="w-full h-full object-contain"
-                            format="webp"
                         />
                     </div>
                     <p class="text-xs text-gray-600 dark:text-gray-300 mt-3 leading-relaxed">

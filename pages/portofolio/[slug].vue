@@ -47,9 +47,7 @@
                         class="w-full h-full object-cover"
                         :src="metaInit?.imageUrl"
                         :alt="metaInit?.title || data?.meta.applicationName"
-                        format="webp"
                         loading="eager"
-                        placeholder
                     />
                 </div>
 
