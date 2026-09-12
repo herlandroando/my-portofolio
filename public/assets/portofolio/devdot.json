@@ -1,0 +1,14 @@
+{
+    "applicationName": "DevDot",
+    "url": {
+        "demo": "https://dev-dot.herlandro.my.id",
+        "github": "https://github.com/Cara-Instan/DevDot"
+    },
+    "note": "DevDot is engineered with a strict 100% offline, zero-telemetry architecture. While Tauri v2 desktop compilation and binary packaging are undergoing further optimization, DevDot is deployed live on the web at dev-dot.herlandro.my.id for daily use.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Creator & Lead Developer"
+        }
+    ]
+}

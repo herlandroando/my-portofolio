@@ -1,0 +1,14 @@
+{
+    "applicationName": "TrackDot",
+    "url": {
+        "github": "https://github.com/Cara-Instan/TrackDot",
+        "demo": "https://github.com/Cara-Instan/TrackDot/releases"
+    },
+    "note": "TrackDot is built with a local-first, zero-telemetry architecture. Settings are saved locally in the Windows registry or portable JSON configuration.",
+    "createdBy": [
+        {
+            "name": "Herlandro Tribiakto",
+            "role": "Creator & Lead Developer"
+        }
+    ]
+}
